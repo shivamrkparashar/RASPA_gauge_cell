@@ -1,5 +1,5 @@
 SimulationType  Minimization
-NumberOfCycles  1
+NumberOfCycles  10
 RestartFile     no
 PrintEvery      1
 

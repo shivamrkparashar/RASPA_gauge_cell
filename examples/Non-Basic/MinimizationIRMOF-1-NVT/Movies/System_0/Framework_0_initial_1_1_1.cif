@@ -1,8 +1,8 @@
 data_IRMOF-1
 
 _audit_creation_method RASPA-1.0
-_audit_creation_date 2014-11-24
-_audit_author_name 'David Dubbeldam'
+_audit_creation_date 2021-4-10
+_audit_author_name 'Shivam Parashar'
 
 _citation_author_name        'M. Eddaoudi, J. Kim, N. Rosi, D. Vodak, J. Wachter, M. O. Keeffe, and O.M. Yaghi'
 _citation_title              'Systematic design of pore size and functionality in isoreticular MOFs and their application in methane storage'

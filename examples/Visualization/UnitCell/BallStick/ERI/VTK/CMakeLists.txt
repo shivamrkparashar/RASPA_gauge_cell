@@ -6,4 +6,3 @@ find_package(Qt5Widgets)
 include(${VTK_USE_FILE})
 add_executable(simulate main.cxx)
 target_link_libraries(simulate ${VTK_LIBRARIES})
-

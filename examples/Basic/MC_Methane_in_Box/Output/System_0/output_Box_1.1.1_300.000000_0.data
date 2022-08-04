@@ -1,27 +1,24 @@
 Compiler and run-time data
 ===========================================================================
-RASPA 1.9-11
+RASPA 2.0.35
 Compiled as a 64-bits application
-Compiler: gcc 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.54)
-Compile Date = Nov 23 2014, Compile Time = 11:43:26
+Compiler: gcc 8.3.0
+Compile Date = Sep 16 2019, Compile Time = 22:01:35
 
-Sun Nov 23 13:16:12 2014
-Simulation started on Sunday, November 23.
-The start time was 01:16 PM.
+Tue Jun  9 09:20:04 2020
+Simulation started on Tuesday, June 09.
+The start time was 09:20 AM.
 
-Cpu data:    x86_64
-Cpu Model:   MacPro5,1
-Host name:   server.darkwing.nl
-OS release:  14.0.0
-OS type:     Darwin
-OS version:  14B25
-
+Hostname:    The start time was 09:20 AM.
+OS type:     The start time was 09:20 AM.
+OS release:  The start time was 09:20 AM.
+OS version:  The start time was 09:20 AM.
 
 Simulation
 ===========================================================================
 Dimensions: 3
-Random number seed: 1416744972
-RASPA directory set to: /Users/dubbelda/RASPA/simulations/
+Random number seed: 1591708804
+RASPA directory set to: /home/shivam/RASPA/simulations/
 String appended to output-files: 
 Number of cycles: 10000
 Number of initializing cycles: 5000
@@ -29,8 +26,6 @@ Number of equilibration cycles: 0
 Print every: 1000
 Rectangular boundary condition applied
 Timestep: 0.000500
-Initialization Ensemble: NVE (constant number of particles N, constant volume V, constant energy E)
-Production run ensemble: NVE (constant number of particles N, constant volume V, constant energy E)
 	Degrees of freedom:                        300
 	Translational Degrees of freedom:          300
 	Rotational Degrees of freedom:             0
@@ -644,7 +639,7 @@ CH2_sp2 -    H_h2 [LENNARD_JONES] p_0/k_B:  58.42174 [K], p_1: 3.32150 [A], shif
  CH_sp2 -    H_h2 [LENNARD_JONES] p_0/k_B:  44.10329 [K], p_1: 3.34900 [A], shift/k_B:  -0.08331613 [K], tailcorrection: no
  C_benz -  C_benz [LENNARD_JONES] p_0/k_B:  30.70000 [K], p_1: 3.60000 [A], shift/k_B:  -0.08945594 [K], tailcorrection: no
  C_benz -  H_benz [LENNARD_JONES] p_0/k_B:  27.95201 [K], p_1: 2.98000 [A], shift/k_B:  -0.02621690 [K], tailcorrection: no
- C_benz -      Na [LENNARD_JONES] p_0/k_B:  15.36438 [K], p_1: 3.54500 [A], shift/k_B:  -0.04082220 [K], tailcorrection: no
+ C_benz -      Na [LENNARD_JONES] p_0/k_B:  15.36439 [K], p_1: 3.54500 [A], shift/k_B:  -0.04082220 [K], tailcorrection: no
  C_benz -   C_co2 [LENNARD_JONES] p_0/k_B:  29.38640 [K], p_1: 3.18000 [A], shift/k_B:  -0.04069407 [K], tailcorrection: no
  C_benz -   O_co2 [LENNARD_JONES] p_0/k_B:  49.71484 [K], p_1: 3.31650 [A], shift/k_B:  -0.08858189 [K], tailcorrection: no
  C_benz -    O_o2 [LENNARD_JONES] p_0/k_B:  40.34617 [K], p_1: 3.32240 [A], shift/k_B:  -0.07265981 [K], tailcorrection: no
@@ -661,7 +656,7 @@ CH2_sp2 -    H_h2 [LENNARD_JONES] p_0/k_B:  58.42174 [K], p_1: 3.32150 [A], shif
  H_benz -   N_com [ZERO_POTENTIAL]
  H_benz -      Ow [LENNARD_JONES] p_0/k_B:  47.76149 [K], p_1: 2.72850 [A], shift/k_B:  -0.02639576 [K], tailcorrection: no
  H_benz -    H_h2 [LENNARD_JONES] p_0/k_B:  30.56166 [K], p_1: 2.65900 [A], shift/k_B:  -0.01446799 [K], tailcorrection: no
-     Na -   C_co2 [LENNARD_JONES] p_0/k_B:  15.36438 [K], p_1: 3.54500 [A], shift/k_B:  -0.04082220 [K], tailcorrection: no
+     Na -   C_co2 [LENNARD_JONES] p_0/k_B:  15.36439 [K], p_1: 3.54500 [A], shift/k_B:  -0.04082220 [K], tailcorrection: no
      Na -   O_co2 [LENNARD_JONES] p_0/k_B:  14.56367 [K], p_1: 2.94400 [A], shift/k_B:  -0.01269918 [K], tailcorrection: no
      Na -   N_com [ZERO_POTENTIAL]
      Cl -   N_com [ZERO_POTENTIAL]
@@ -833,11 +828,17 @@ Component 0 [methane] (Adsorbate molecule)
 		Percentage of CF swap lambda moves:                0.000000
 		Percentage of CB/CFMC swap lambda moves:           0.000000
 		Percentage of Widom insertion moves:               0.000000
+		Percentage of CF-Widom insertion moves:            0.000000
+		Percentage of Gibbs Widom insertion moves:         0.000000
 		Percentage of surface-area moves:                  0.000000
 		Percentage of Gibbs particle-transfer moves:       0.000000
 		Percentage of Gibbs identity-change moves:         0.000000
 		Percentage of CF Gibbs lambda-transfer moves:      0.000000
 		Percentage of CB/CFMC Gibbs lambda-transfer moves: 0.000000
+		Percentage of exchange frac./int. particle moves:  0.000000
+		Percentage of fractional mol. to other box moves:  0.000000
+		Percentage of lambda-change moves:                 0.000000
+		Percentage of fractional to integer moves:         0.000000
 
 	System Moves:
 		Percentage of parallel-tempering moves:            0.000000
@@ -932,7 +933,7 @@ Number of framework atoms in the unit cell: 0
 Framework Mass:     0.000000000000 [g/mol]
 Framework Density:     0.000000000000 [kg/m^3]                inf [cm^3/g]
 Helium void fraction:    0.00000000
-Available pore volume:    0.00000000 [A^3]           nan [cm^3/g]
+Available pore volume:    0.00000000 [A^3]          -nan [cm^3/g]
 Conversion factor from molecule/unit cell -> kmol/m^3: 0.0615014, kmol/m^3 accesible pore volume: inf
 
 Number Of Frameworks (per system): 0
@@ -1067,8 +1068,8 @@ Host/Cation energy:                                           0.00000000
 	Host/Cation bondipole-bonddipole Real energy:                 0.00000000
 	Host/Cation bondipole-bonddipole Fourier energy:              0.00000000
 
-Adsorbate/Adsorbate energy:                                   -17501.42972308
-	Adsorbate/Adsorbate VDW energy:                               -17501.42972308
+Adsorbate/Adsorbate energy:                                   -18305.10675596
+	Adsorbate/Adsorbate VDW energy:                               -18305.10675596
 	Adsorbate/Adsorbate Coulomb energy:                                0.00000000
 	Adsorbate/Adsorbate charge-charge Real energy:                     0.00000000
 	Adsorbate/Adsorbate charge-charge Fourier energy:                  0.00000000
@@ -1115,8 +1116,8 @@ Out-of-plane distance constraints energy:                     0.00000000
 Exclusion constraints energy:                                 0.00000000
 
 ===================================================================
-Total energy: -17501.429723081405
-	Total Van der Waals: -17501.429723
+Total energy: -18305.106755962843
+	Total Van der Waals: -18305.106756
 	Total Coulomb: 0.000000
 
 	Total Polarization: 0.000000
@@ -1147,14 +1148,14 @@ Component 0 (methane), current number of integer/fractional/reaction molecules: 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction
 
-Current total potential energy:            -17501.4297230814 [K]
+Current total potential energy:            -18305.1067559628 [K]
 	Current Host-Host energy:                     0.0000000000 [K]
 	Current Host-Adsorbate energy:                0.0000000000 [K]
 	Current Host-Cation energy:                   0.0000000000 [K]
-	Current Adsorbate-Adsorbate energy:      -17501.4297230814 [K]
+	Current Adsorbate-Adsorbate energy:      -18305.1067559628 [K]
 	Current Cation-Cation energy:                 0.0000000000 [K]
 	Current Adsorbate-Cation energy:              0.0000000000 [K]
 
@@ -1176,14 +1177,14 @@ Component 0 (methane), current number of integer/fractional/reaction molecules: 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction
 
-Current total potential energy:            -17325.2891542034 [K]
+Current total potential energy:            -15533.5420723953 [K]
 	Current Host-Host energy:                     0.0000000000 [K]
 	Current Host-Adsorbate energy:                0.0000000000 [K]
 	Current Host-Cation energy:                   0.0000000000 [K]
-	Current Adsorbate-Adsorbate energy:      -17325.2891542034 [K]
+	Current Adsorbate-Adsorbate energy:      -15533.5420723953 [K]
 	Current Cation-Cation energy:                 0.0000000000 [K]
 	Current Adsorbate-Cation energy:              0.0000000000 [K]
 
@@ -1205,14 +1206,14 @@ Component 0 (methane), current number of integer/fractional/reaction molecules: 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction
 
-Current total potential energy:            -18250.4129449615 [K]
+Current total potential energy:            -16587.7269089940 [K]
 	Current Host-Host energy:                     0.0000000000 [K]
 	Current Host-Adsorbate energy:                0.0000000000 [K]
 	Current Host-Cation energy:                   0.0000000000 [K]
-	Current Adsorbate-Adsorbate energy:      -18250.4129449615 [K]
+	Current Adsorbate-Adsorbate energy:      -16587.7269089940 [K]
 	Current Cation-Cation energy:                 0.0000000000 [K]
 	Current Adsorbate-Cation energy:              0.0000000000 [K]
 
@@ -1234,14 +1235,14 @@ Component 0 (methane), current number of integer/fractional/reaction molecules: 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction
 
-Current total potential energy:            -18103.3747915237 [K]
+Current total potential energy:            -18699.2410174613 [K]
 	Current Host-Host energy:                     0.0000000000 [K]
 	Current Host-Adsorbate energy:                0.0000000000 [K]
 	Current Host-Cation energy:                   0.0000000000 [K]
-	Current Adsorbate-Adsorbate energy:      -18103.3747915237 [K]
+	Current Adsorbate-Adsorbate energy:      -18699.2410174613 [K]
 	Current Cation-Cation energy:                 0.0000000000 [K]
 	Current Adsorbate-Cation energy:              0.0000000000 [K]
 
@@ -1263,14 +1264,14 @@ Component 0 (methane), current number of integer/fractional/reaction molecules: 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction
 
-Current total potential energy:            -17663.1633132376 [K]
+Current total potential energy:            -18333.5806627743 [K]
 	Current Host-Host energy:                     0.0000000000 [K]
 	Current Host-Adsorbate energy:                0.0000000000 [K]
 	Current Host-Cation energy:                   0.0000000000 [K]
-	Current Adsorbate-Adsorbate energy:      -17663.1633132376 [K]
+	Current Adsorbate-Adsorbate energy:      -18333.5806627743 [K]
 	Current Cation-Cation energy:                 0.0000000000 [K]
 	Current Adsorbate-Cation energy:              0.0000000000 [K]
 
@@ -1279,8 +1280,8 @@ Current total potential energy:            -17663.1633132376 [K]
 Average Properties at Current cycle: 0 out of 10000
 ========================================================================================
 
-Framework surface area:                nan [m^2/g]        0.0000000000 [m^2/cm^3]       0.0000000000 [A^2]
-	Cation surface area:                                nan [m^2/g]        0.0000000000 [m^2/cm^3]       0.0000000000 [A^2]
+Framework surface area:               -nan [m^2/g]        0.0000000000 [m^2/cm^3]       0.0000000000 [A^2]
+	Cation surface area:                               -nan [m^2/g]        0.0000000000 [m^2/cm^3]       0.0000000000 [A^2]
 Compressibility:       0.0000000000 [-]
 Henry coefficients
 	Component 0: 0 [mol/kg/Pa] (Rosenbluth factor new: 0 [-])
@@ -1300,18 +1301,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -20002.3380720440 [K]  (avg.      -20002.3380720440)
+Current total potential energy:            -17606.1614022706 [K]  (avg.      -17606.1614022706)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -20002.3380720440 [K]  (avg.      -20002.3380720440)
+	Current Adsorbate-Adsorbate energy:      -17606.1614022706 [K]  (avg.      -17606.1614022706)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1330,18 +1331,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -18395.2410611133 [K]  (avg.      -19331.8553144548)
+Current total potential energy:            -18244.4879218629 [K]  (avg.      -18188.6005507903)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -18395.2410611133 [K]  (avg.      -19331.8553144548)
+	Current Adsorbate-Adsorbate energy:      -18244.4879218629 [K]  (avg.      -18188.6005507903)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1360,18 +1361,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -19607.0692899398 [K]  (avg.      -18796.7591691372)
+Current total potential energy:            -18187.2756531774 [K]  (avg.      -18342.1584573029)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -19607.0692899398 [K]  (avg.      -18796.7591691372)
+	Current Adsorbate-Adsorbate energy:      -18187.2756531774 [K]  (avg.      -18342.1584573029)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1390,18 +1391,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -19708.8243625011 [K]  (avg.      -18590.8877943955)
+Current total potential energy:            -20886.0557534968 [K]  (avg.      -18355.7295513668)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -19708.8243625011 [K]  (avg.      -18590.8877943955)
+	Current Adsorbate-Adsorbate energy:      -20886.0557534968 [K]  (avg.      -18355.7295513668)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1420,18 +1421,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -16953.5001984924 [K]  (avg.      -18473.9123260029)
+Current total potential energy:            -18581.5464210572 [K]  (avg.      -18470.4299606003)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -16953.5001984924 [K]  (avg.      -18473.9123260029)
+	Current Adsorbate-Adsorbate energy:      -18581.5464210572 [K]  (avg.      -18470.4299606003)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1450,18 +1451,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -20079.2969770690 [K]  (avg.      -18496.2769994726)
+Current total potential energy:            -18106.4081934765 [K]  (avg.      -18469.5498850791)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -20079.2969770690 [K]  (avg.      -18496.2769994726)
+	Current Adsorbate-Adsorbate energy:      -18106.4081934765 [K]  (avg.      -18469.5498850791)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1480,18 +1481,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -20215.2636459484 [K]  (avg.      -18448.7487468186)
+Current total potential energy:            -17856.8192047137 [K]  (avg.      -18440.1455108588)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -20215.2636459484 [K]  (avg.      -18448.7487468186)
+	Current Adsorbate-Adsorbate energy:      -17856.8192047137 [K]  (avg.      -18440.1455108588)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1510,18 +1511,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -17581.6949314836 [K]  (avg.      -18528.5821182541)
+Current total potential energy:            -17990.3336742118 [K]  (avg.      -18430.6004060542)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -17581.6949314836 [K]  (avg.      -18528.5821182541)
+	Current Adsorbate-Adsorbate energy:      -17990.3336742118 [K]  (avg.      -18430.6004060542)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1540,18 +1541,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -16608.0298037504 [K]  (avg.      -18448.7708396045)
+Current total potential energy:            -20381.7149655152 [K]  (avg.      -18457.7910215919)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -16608.0298037504 [K]  (avg.      -18448.7708396045)
+	Current Adsorbate-Adsorbate energy:      -20381.7149655152 [K]  (avg.      -18457.7910215919)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1570,18 +1571,18 @@ Volume: 27000.00000 [A^3] Average Volume: 27000.00000 [A^3]
 
 Amount of molecules per component:
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000), density:  98.66352 (average  98.66352) kg/m^3]
+Component 0 (methane), current number of integer/fractional/reaction molecules: 100/0/0 (average 100.00000/  0.00000), density:  98.66352 (average  98.66352) kg/m^3]
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Degrees of freedom: 300 0 300 0
 Number of Framework-atoms:      0
-Number of Adsorbates:         100
-Number of Cations:              0
+Number of Adsorbates:         100 (100 integer, 0 fractional, 0 reaction)
+Number of Cations:              0 (0 integer, 0 fractional, 0 reaction)
 
-Current total potential energy:            -17307.3134067447 [K]  (avg.      -18398.1829564221)
+Current total potential energy:            -20371.0297634885 [K]  (avg.      -18538.7517459117)
 	Current Host-Host energy:                     0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Adsorbate energy:                0.0000000000 [K]  (avg.           0.0000000000)
 	Current Host-Cation energy:                   0.0000000000 [K]  (avg.           0.0000000000)
-	Current Adsorbate-Adsorbate energy:      -17307.3134067447 [K]  (avg.      -18398.1829564221)
+	Current Adsorbate-Adsorbate energy:      -20371.0297634885 [K]  (avg.      -18538.7517459117)
 	Current Cation-Cation energy:                 0.0000000000 [K]  (avg.           0.0000000000)
 	Current Adsorbate-Cation energy:              0.0000000000 [K]  (avg.           0.0000000000)
 
@@ -1675,8 +1676,8 @@ Host/Cation energy:                                           0.00000000
 	Host/Cation bondipole-bonddipole Real energy:                 0.00000000
 	Host/Cation bondipole-bonddipole Fourier energy:              0.00000000
 
-Adsorbate/Adsorbate energy:                                   -16283.66522986
-	Adsorbate/Adsorbate VDW energy:                               -16283.66522986
+Adsorbate/Adsorbate energy:                                   -19096.91111019
+	Adsorbate/Adsorbate VDW energy:                               -19096.91111019
 	Adsorbate/Adsorbate Coulomb energy:                                0.00000000
 	Adsorbate/Adsorbate charge-charge Real energy:                     0.00000000
 	Adsorbate/Adsorbate charge-charge Fourier energy:                  0.00000000
@@ -1723,8 +1724,8 @@ Out-of-plane distance constraints energy:                     0.00000000
 Exclusion constraints energy:                                 0.00000000
 
 ===================================================================
-Total energy: -16283.665229859500
-	Total Van der Waals: -16283.665230
+Total energy: -19096.911110194083
+	Total Van der Waals: -19096.911110
 	Total Coulomb: 0.000000
 
 	Total Polarization: 0.000000
@@ -1744,9 +1745,9 @@ Bead: 0
 Performance of the translation move:
 ======================================
 Component 0 [methane]
-	total        333219.000000 332880.000000 333901.000000
-	succesfull   284312.000000 284526.000000 284632.000000
-	accepted   0.853229 0.854740 0.852444
+	total        333542.000000 332918.000000 333540.000000
+	succesfull   283894.000000 284055.000000 284255.000000
+	accepted   0.851149 0.853228 0.852237
 	displacement 1.000000 1.000000 1.000000
 
 
@@ -1800,29 +1801,39 @@ Gibbs identity change move was OFF for all components
 
 CFMC swap lambda move was OFF for all components
 
-CB/CFMC swap lambda move was OFF for all components
+CB/CFCMC swap lambda move was OFF for all components
 
 CFMC Gibbs lambda move was OFF for all components
 
 CB/CFMC Gibbs lambda move was OFF for all components
 
-Performance of the Reaction MC lambda move:
-===========================================
+No reactions present, RXMC is OFF
 
+Exchange fractional-particle move was OFF for all components
+
+CFMC Gibbs Lambda-change move was OFF for all components
+
+CFMC Gibbs Swap-Fractional-Molecule-To-Other-Box move was OFF for all components
+
+CFMC Gibbs Swap-Fractional-Molecule-To-Other-Box move was OFF for all components
+
+CFMC swap lambda move was OFF for all components
+
+Gibbs Widom move was OFF for all components
 
 
 
 Total CPU timings:
 ===========================================
-initialization:             25.594434 [s]
+initialization:             14.786507 [s]
 equilibration:                      0 [s]
-production run:             52.189162 [s]
-total time:                 77.783596 [s]
+production run:             31.091312 [s]
+total time:                 45.877819 [s]
 
 Production run CPU timings of the MC moves:
 ===========================================
 Component: 0 (methane)
-	translation:                                 51.499493 [s]
+	translation:                                 30.334388 [s]
 	random translation:                                  0 [s]
 	rotation:                                            0 [s]
 	random rotation:                                     0 [s]
@@ -1836,14 +1847,20 @@ Component: 0 (methane)
 	swap lambda (CFMC):                                  0 [s]
 	swap lambda (CB/CFMC):                               0 [s]
 	Widom:                                               0 [s]
+	CF-Widom:                                            0 [s]
+	Gibbs Widom:                                         0 [s]
 	surface area:                                        0 [s]
 	Gibbs particle transform:                            0 [s]
 	Gibbs particle transform (CFMC):                     0 [s]
 	Gibbs particle transform (CB/CFMC):                  0 [s]
 	Gibbs indentity change:                              0 [s]
+	Exchange fract./int. particle:                       0 [s]
+	Swap Gibbs-fractional molecules:                     0 [s]
+	Change Gibs-lambda value:                            0 [s]
+	Convert Gibbs fract. to integer:                     0 [s]
 
 Total all components:
-	translation:                                 51.499493 [s]
+	translation:                                 30.334388 [s]
 	random translation:                                  0 [s]
 	rotation:                                            0 [s]
 	random rotation:                                     0 [s]
@@ -1857,11 +1874,17 @@ Total all components:
 	swap lambda (CFMC):                                  0 [s]
 	swap lambda (CB/CFMC):                               0 [s]
 	Widom:                                               0 [s]
+	CF-Widom:                                            0 [s]
+	Gibbs Widom:                                         0 [s]
 	surface area:                                        0 [s]
 	Gibbs particle transform:                            0 [s]
 	Gibbs particle transform (CFMC):                     0 [s]
 	Gibbs particle transform (CB/CFMC):                  0 [s]
-	Gibbs indentity change:                              0 [s]
+	Gibbs identity change:                               0 [s]
+	Exchange fract./int. particle:                       0 [s]
+	Swap Gibbs-fractional molecules:                     0 [s]
+	Change Gibs-lambda value:                            0 [s]
+	Convert Gibbs fract. to integer:                     0 [s]
 
 System moves:
 	parallel tempering:                             0 [s]
@@ -1882,7 +1905,7 @@ Production run CPU timings of the MC moves summed over all systems and component
 ==================================================================================
 
 Particles moves:
-	translation:                                 51.499493 [s]
+	translation:                                 30.334388 [s]
 	random translation:                                  0 [s]
 	rotation:                                            0 [s]
 	random rotation:                                     0 [s]
@@ -1896,11 +1919,17 @@ Particles moves:
 	swap lambda (CFMC):                                  0 [s]
 	swap lambda (CB/CFMC):                               0 [s]
 	Widom:                                               0 [s]
+	CF-Widom:                                            0 [s]
+	Gibbs Widom:                                         0 [s]
 	surface area:                                        0 [s]
 	Gibbs particle transform:                            0 [s]
 	Gibbs particle transform (CFMC):                     0 [s]
 	Gibbs particle transform (CB/CFMC):                  0 [s]
 	Gibbs indentity change:                              0 [s]
+	Exchange frac./int. particle:                        0 [s]
+	Swap Gibbs-fractional molecules:                     0 [s]
+	Change Gibs-lambda value:                            0 [s]
+	Convert Gibbs fract. to integer:                     0 [s]
 
 System moves:
 	parallel tempering:                             0 [s]
@@ -2002,8 +2031,8 @@ Host/Cation energy:                                           0.00000000
 	Host/Cation bondipole-bonddipole Real energy:                 0.00000000
 	Host/Cation bondipole-bonddipole Fourier energy:              0.00000000
 
-Adsorbate/Adsorbate energy:                                   -16283.66522986
-	Adsorbate/Adsorbate VDW energy:                               -16283.66522986
+Adsorbate/Adsorbate energy:                                   -19096.91111019
+	Adsorbate/Adsorbate VDW energy:                               -19096.91111019
 	Adsorbate/Adsorbate Coulomb energy:                                0.00000000
 	Adsorbate/Adsorbate charge-charge Real energy:                     0.00000000
 	Adsorbate/Adsorbate charge-charge Fourier energy:                  0.00000000
@@ -2050,8 +2079,8 @@ Out-of-plane distance constraints energy:                     0.00000000
 Exclusion constraints energy:                                 0.00000000
 
 ===================================================================
-Total energy: -16283.665229858871
-	Total Van der Waals: -16283.665230
+Total energy: -19096.911110193425
+	Total Van der Waals: -19096.911110
 	Total Coulomb: 0.000000
 
 	Total Polarization: 0.000000
@@ -2136,8 +2165,8 @@ Host/Cation energy-drift:                                            0
 		Host/Cation Fourier charge-bonddipole energy-drift:              0
 		Host/Cation Real bonddipole-bonddipole energy-drift:             0
 		Host/Cation Fourier bonddipole-bonddipole energy-drift:          0
-Adsorbate/Adsorbate energy-drift:                                     -6.3007e-10
-	Adsorbate/Adsorbate VDW energy-drift:                               -6.3007e-10
+Adsorbate/Adsorbate energy-drift:                                     -6.58511e-10
+	Adsorbate/Adsorbate VDW energy-drift:                               -6.58511e-10
 	Adsorbate/Adsorbate Coulomb energy-drift:                           0
 		Adsorbate/Adsorbate Real charge-charge energy-drift:              0
 		Adsorbate/Adsorbate Fourier charge-charge energy-drift:           0
@@ -2182,7 +2211,7 @@ Out-of-plane distance constraints energy-drift:                    0
 Exclusion constraints energy-drift:                 0
 
 ===================================================================
-Total energy-drift: -6.3007e-10
+Total energy-drift: -6.58511e-10
 
 
 Component 0 [methane]
@@ -2290,8 +2319,9 @@ Average Surface Area:
 	Block[ 4] 0.000000 [-]
 	------------------------------------------------------------------------------
 	Surface area:   0.000000 +/- 0.000000 [A^2]
-	Surface area:   nan +/- nan [m^2/g]
+	Surface area:   -nan +/- -nan [m^2/g]
 	Surface area:   0.000000 +/- 0 [m^2/cm^3]
+
 
 Average Density:
 =================
@@ -2322,46 +2352,31 @@ Average compressibility Z:
 	------------------------------------------------------------------------------
 	Average              0.00000 [-] +/-            0.00000 [-]
 
-Heat of desorption:
-===================
+Average Heat Capacity (MC-NPT-ensemble): [1/(kB T^2)]*[<H^2>-<H>^2]
+===================================================================
+	Block[ 0] 156.720062 [J/mol/K]
+	Block[ 1] 140.942322 [J/mol/K]
+	Block[ 2] 134.146597 [J/mol/K]
+	Block[ 3] 140.058722 [J/mol/K]
+	Block[ 4] 144.964188 [J/mol/K]
+	------------------------------------------------------------------------------
+	Average            143.36638 [J/mol/K] +/-           15.03848 [J/mol/K]
+	Average             34.26539 [cal/mol/K] +/-            3.59428 [cal/mol/K]
+
+Enthalpy of adsorption:
+=======================
+
 	Block[ 0] inf                [K]
 	Block[ 1] inf                [K]
 	Block[ 2] -inf               [K]
-	Block[ 3] inf                [K]
-	Block[ 4] inf                [K]
+	Block[ 3] -inf               [K]
+	Block[ 4] -nan               [K]
 	------------------------------------------------------------------------------
-	Average                  nan +/-                nan [K]
-	                         nan +/-                nan [KJ/MOL]
-Note: Ug should be added to this value
-Note: The heat of adsorption Q=-H
+	Average                 -nan +/-                nan [K]
+	                        -nan +/-                nan [KJ/MOL]
+	Note: Ug should be subtracted from this value
+	Note: The heat of adsorption Q=-H
 
-Heat of desorption (Host-Adsorbate contribution):
-=================================================
-	Block[ 0] nan                [K]
-	Block[ 1] nan                [K]
-	Block[ 2] nan                [K]
-	Block[ 3] nan                [K]
-	Block[ 4] nan                [K]
-	------------------------------------------------------------------------------
-	Average                  nan +/-                nan [K]
-	                         nan +/-                nan [KJ/MOL]
-Note: the sum of the parts is *not* exactly equal to the true value (Heat of desorption)
-Note: Ug and K_BT are not included here
-Note: The heat of adsorption Q=-H
-
-Heat of desorption (Adsorbate-Adsorbate contribution):
-======================================================
-	Block[ 0] inf                [K]
-	Block[ 1] inf                [K]
-	Block[ 2] -inf               [K]
-	Block[ 3] inf                [K]
-	Block[ 4] inf                [K]
-	------------------------------------------------------------------------------
-	Average                  nan +/-                nan [K]
-	                         nan +/-                nan [KJ/MOL]
-Note: the sum of the parts is *not* exactly equal to the true value (Heat of desorption)
-Note: Ug and K_BT are not included here
-Note: The heat of adsorption Q=-H
 
 derivative of the chemical potential with respect to density (constant T,V):
 ============================================================================
@@ -2803,14 +2818,14 @@ Average Host-Host energy:
 
 Average Adsorbate-Adsorbate energy:
 ===================================
-	Block[ 0] -18796.35401       Van der Waals: -18796.35401       Coulomb: 0.00000            [K]
-	Block[ 1] -18152.23084       Van der Waals: -18152.23084       Coulomb: 0.00000            [K]
-	Block[ 2] -18396.77812       Van der Waals: -18396.77812       Coulomb: 0.00000            [K]
-	Block[ 3] -18450.64075       Van der Waals: -18450.64075       Coulomb: 0.00000            [K]
-	Block[ 4] -17933.42582       Van der Waals: -17933.42582       Coulomb: 0.00000            [K]
+	Block[ 0] -18342.23590       Van der Waals: -18342.23590       Coulomb: 0.00000            [K]
+	Block[ 1] -18598.56846       Van der Waals: -18598.56846       Coulomb: 0.00000            [K]
+	Block[ 2] -18379.92383       Van der Waals: -18379.92383       Coulomb: 0.00000            [K]
+	Block[ 3] -18509.47393       Van der Waals: -18509.47393       Coulomb: 0.00000            [K]
+	Block[ 4] -18785.52050       Van der Waals: -18785.52050       Coulomb: 0.00000            [K]
 	------------------------------------------------------------------------------
-	Average   -18345.88591       Van der Waals: -18345.885910      Coulomb: 0.00000            [K]
-	      +/- 582.48483                     +/- 582.484826              +/- 0.00000            [K]
+	Average   -18523.14452       Van der Waals: -18523.144524      Coulomb: 0.00000            [K]
+	      +/- 319.94612                     +/- 319.946125              +/- 0.00000            [K]
 
 Average Cation-Cation energy:
 =============================
@@ -2988,13 +3003,13 @@ Exclusion-constraints energy:
 
 Total energy:
 =============
-	Block[ 0]       -18796.35401 [K]
-	Block[ 1]       -18152.23084 [K]
-	Block[ 2]       -18396.77812 [K]
-	Block[ 3]       -18450.64075 [K]
-	Block[ 4]       -17933.42582 [K]
+	Block[ 0]       -18342.23590 [K]
+	Block[ 1]       -18598.56846 [K]
+	Block[ 2]       -18379.92383 [K]
+	Block[ 3]       -18509.47393 [K]
+	Block[ 4]       -18785.52050 [K]
 	------------------------------------------------------------------------------
-	Average         -18345.88591 [K] +/-          582.48483 [K]
+	Average         -18523.14452 [K] +/-          319.94612 [K]
 
 Number of molecules:
 ====================
@@ -3009,9 +3024,9 @@ Component 0 [methane]
 	------------------------------------------------------------------------------
 	Average                                    100.0000000000 +/-       0.0000000000 [-]
 	Average loading absolute [molecules/unit cell]      100.0000000000 +/-       0.0000000000 [-]
-	Average loading absolute [mol/kg framework]                   inf +/-                nan [-]
-	Average loading absolute [milligram/gram framework]                   inf +/-                nan [-]
-	Average loading absolute [cm^3 (STP)/gr framework]                   inf +/-                nan [-]
+	Average loading absolute [mol/kg framework]                   inf +/-               -nan [-]
+	Average loading absolute [milligram/gram framework]                   inf +/-               -nan [-]
+	Average loading absolute [cm^3 (STP)/gr framework]                   inf +/-               -nan [-]
 	Average loading absolute [cm^3 (STP)/cm^3 framework]        137.8491657356 +/-       0.0000000000 [-]
 
 	Block[ 0] 100.00000          [-]
@@ -3022,9 +3037,9 @@ Component 0 [methane]
 	------------------------------------------------------------------------------
 	Average                                    100.0000000000 +/-       0.0000000000 [-]
 	Average loading excess [molecules/unit cell]      100.0000000000 +/-       0.0000000000 [-]
-	Average loading excess [mol/kg framework]                   inf +/-                nan [-]
-	Average loading excess [milligram/gram framework]                   inf +/-                nan [-]
-	Average loading excess [cm^3 (STP)/gr framework]                   inf +/-                nan [-]
+	Average loading excess [mol/kg framework]                   inf +/-               -nan [-]
+	Average loading excess [milligram/gram framework]                   inf +/-               -nan [-]
+	Average loading excess [cm^3 (STP)/gr framework]                   inf +/-               -nan [-]
 	Average loading excess [cm^3 (STP)/cm^3 framework]        137.8491657356 +/-       0.0000000000 [-]
 
 
@@ -3036,7 +3051,77 @@ Average Widom Rosenbluth factor:
 	Block[ 3] 0 [-]
 	Block[ 4] 0 [-]
 	------------------------------------------------------------------------------
-	[methane] Average Widom:   0 +/- 0.000000 [-]
+	[methane] Average Widom Rosenbluth-weight:   0 +/- 0.000000 [-]
+
+Average Widom chemical potential:
+=================================
+	Block[ 0] 0 [-]
+	Block[ 1] 0 [-]
+	Block[ 2] 0 [-]
+	Block[ 3] 0 [-]
+	Block[ 4] 0 [-]
+	------------------------------------------------------------------------------
+	[methane] Average chemical potential:   0 +/- 0.000000 [K]
+
+Average Widom Ideal-gas contribution:
+=====================================
+	Block[ 0] 0 [-]
+	Block[ 1] 0 [-]
+	Block[ 2] 0 [-]
+	Block[ 3] 0 [-]
+	Block[ 4] 0 [-]
+	------------------------------------------------------------------------------
+	[methane] Average Widom Ideal-gas chemical potential:   0 +/- 0.000000 [-]
+
+Average Widom excess contribution:
+==================================
+	Block[ 0] 0 [-]
+	Block[ 1] 0 [-]
+	Block[ 2] 0 [-]
+	Block[ 3] 0 [-]
+	Block[ 4] 0 [-]
+	------------------------------------------------------------------------------
+	[methane] Average Widom excess chemical potential:   0 +/- 0.000000 [-]
+
+Average Gibbs Widom Rosenbluth factor:
+======================================
+	Block[ 0] 0 [-]
+	Block[ 1] 0 [-]
+	Block[ 2] 0 [-]
+	Block[ 3] 0 [-]
+	Block[ 4] 0 [-]
+	------------------------------------------------------------------------------
+	[methane] Average Gibbs Widom Rosenbluth-weight:   0 +/- 0.000000 [-]
+
+Average Gibbs Widom chemical potential:
+=======================================
+	Block[ 0] 0 [-]
+	Block[ 1] 0 [-]
+	Block[ 2] 0 [-]
+	Block[ 3] 0 [-]
+	Block[ 4] 0 [-]
+	------------------------------------------------------------------------------
+	[methane] Average Gibbs chemical potential:   0 +/- 0.000000 [K]
+
+Average Gibbs Widom Ideal-gas contribution:
+===========================================
+	Block[ 0] 0 [-]
+	Block[ 1] 0 [-]
+	Block[ 2] 0 [-]
+	Block[ 3] 0 [-]
+	Block[ 4] 0 [-]
+	------------------------------------------------------------------------------
+	[methane] Average Gibbs Ideal-gas chemical potential:   0 +/- 0.000000 [-]
+
+Average Gibbs Widom excess contribution:
+===========================================
+	Block[ 0] 0 [-]
+	Block[ 1] 0 [-]
+	Block[ 2] 0 [-]
+	Block[ 3] 0 [-]
+	Block[ 4] 0 [-]
+	------------------------------------------------------------------------------
+	[methane] Average Gibbs excess chemical potential:   0 +/- 0.000000 [-]
 
 Average Henry coefficient:
 ==========================
@@ -3055,7 +3140,7 @@ Average adsorption energy <U_gh>_1-<U_h>_0 obtained from Widom-insertion:
 Simulation finished,  0 warnings
 
 
-Sun Nov 23 13:17:30 2014
-Simulation finished on Sunday, November 23.
-The end time was 01:17 PM.
+Tue Jun  9 09:20:50 2020
+Simulation finished on Tuesday, June 09.
+The end time was 09:20 AM.
 

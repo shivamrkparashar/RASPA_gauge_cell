@@ -1,7 +1,7 @@
 SimulationType                MonteCarlo
-NumberOfCycles                50000
-NumberOfInitializationCycles  10000
-PrintEvery                    5000
+NumberOfCycles                5
+NumberOfInitializationCycles  1
+PrintEvery                    1
 RestartFile                   no
 
 ChargeMethod                  Ewald

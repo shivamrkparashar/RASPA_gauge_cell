@@ -18,6 +18,6 @@ complex.h               framework_born.c      input.h              internal_hess
 constants.c             framework_born.h      integrate.c          internal_hessian.h  main.c              molecule.c                 output.h               scattering_factors.c  status.h
 constants.h             framework_energy.c    integrate.h          inter_born.c        matrix.c            molecule.h                 potentials.c           scattering_factors.h  thermo_baro_stats.c
 cubic_spline_1d.c       framework_energy.h    integration.c        inter_born.h        matrix.h            molecule_properties.c      potentials.h           simulation.c          thermo_baro_stats.h
-        )
+        gauge_cell.c gauge_cell.h)
 
 target_link_libraries(src_gauge_cell m)
