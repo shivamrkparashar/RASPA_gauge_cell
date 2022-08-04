@@ -1,0 +1,3 @@
+/home/shivam/Downloads/RASPA-2.0/src_gauge_cell/cmake-build-debug/CMakeFiles/src_gauge_cell.dir
+/home/shivam/Downloads/RASPA-2.0/src_gauge_cell/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/shivam/Downloads/RASPA-2.0/src_gauge_cell/cmake-build-debug/CMakeFiles/rebuild_cache.dir
