@@ -3556,6 +3556,7 @@ void RescaleComponentProbabilities(void)
     Components[i].ProbabilityReinsertionInPlaneMove+=Components[i].ProbabilityReinsertionInPlaceMove;
     Components[i].ProbabilityIdentityChangeMove+=Components[i].ProbabilityReinsertionInPlaneMove;
     Components[i].ProbabilitySwapMove+=Components[i].ProbabilityIdentityChangeMove;
+    Components[i].ProbabilityGaugeCellSwapMove+=Components[i].ProbabilitySwapMove;
     Components[i].ProbabilityCFSwapLambdaMove+=Components[i].ProbabilitySwapMove;
     Components[i].ProbabilityCBCFSwapLambdaMove+=Components[i].ProbabilityCFSwapLambdaMove;
     Components[i].ProbabilityWidomMove+=Components[i].ProbabilityCBCFSwapLambdaMove;
@@ -3639,8 +3640,8 @@ void RescaleComponentProbabilities(void)
     Components[i].FractionOfReinsertionInPlaneMove=Components[i].ProbabilityReinsertionInPlaneMove-Components[i].ProbabilityReinsertionInPlaceMove;
     Components[i].FractionOfIdentityChangeMove=Components[i].ProbabilityIdentityChangeMove-Components[i].ProbabilityReinsertionInPlaneMove;
     Components[i].FractionOfSwapMove=Components[i].ProbabilitySwapMove-Components[i].ProbabilityIdentityChangeMove;
-    Components[i].FractionOfGaugeCellSwapMove=Components[i].ProbabilityGaugeCellSwapMove;
-    Components[i].FractionOfCFSwapLambdaMove=Components[i].ProbabilityCFSwapLambdaMove-Components[i].ProbabilitySwapMove;
+    Components[i].FractionOfGaugeCellSwapMove=Components[i].ProbabilityGaugeCellSwapMove - Components[i].ProbabilityOfSwapMove;
+    Components[i].FractionOfCFSwapLambdaMove=Components[i].ProbabilityCFSwapLambdaMove-Components[i].ProbabilityGaugeCellSwapMove;
     Components[i].FractionOfCBCFSwapLambdaMove=Components[i].ProbabilityCBCFSwapLambdaMove-Components[i].ProbabilityCFSwapLambdaMove;
     Components[i].FractionOfWidomMove=Components[i].ProbabilityWidomMove-Components[i].ProbabilityCBCFSwapLambdaMove;
     Components[i].FractionOfCFWidomLambdaMove=Components[i].ProbabilityCFWidomLambdaMove-Components[i].ProbabilityWidomMove;
