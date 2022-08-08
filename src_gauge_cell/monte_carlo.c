@@ -997,7 +997,7 @@ void MonteCarloSimulation(void)
         SampleAngleBetweenPlanesHistogram(PRINT);
         SampleMoleculePropertyHistogram(PRINT);
         SampleDensityProfile3DVTKGrid(PRINT);
-	SampleCOMDensityProfile3DVTKGrid(PRINT);
+	    SampleCOMDensityProfile3DVTKGrid(PRINT);
         SampleCationAndAdsorptionSites(PRINT);
         SampleDcTSTConfigurationFiles(PRINT);
         if(Movies[CurrentSystem]&&(CurrentCycle%WriteMoviesEvery[CurrentSystem]==0))
