@@ -1107,8 +1107,8 @@ int ReadInput(char *input)
     // sampling the number-of-molecules histogram
     ComputeNumberOfMoleculesHistogram[i]=FALSE;
     WriteNumberOfMoleculesHistogramEvery[i]=5000;
-    NumberOfMoleculesRange[i]=500.0;
-    NumberOfMoleculesHistogramSize[i]=1000;
+    NumberOfMoleculesRange[i]=5000.0;
+    NumberOfMoleculesHistogramSize[i]=10000;
 
     // sampling position histograms/free energies
     ComputePositionHistogram[i]=FALSE;

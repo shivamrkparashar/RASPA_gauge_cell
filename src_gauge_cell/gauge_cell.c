@@ -12,7 +12,7 @@
 REAL GaugeCellSize;
 REAL GaugeCellVolume;
 REAL GaugeCellNumberOfParticles;
-int GaugeCellParticleHistogram [1000];
+int GaugeCellParticleHistogram [10000];
 
 FILE *FileHistogram;
 
@@ -20,7 +20,6 @@ void PrintGaugeCellStatistics(void){
 
     if(GaugeCellSize == 0.0) return 
 
-    //GaugeCellVolume = GaugeCellSize*GaugeCellSize*GaugeCellSize;
     GaugeCellVolume = CUBE(GaugeCellSize);
     int CurrentComponent = 0;
     int CurrentSystem =0;
@@ -34,7 +33,7 @@ void PrintGaugeCellStatistics(void){
 
     REAL delta=NumberOfMoleculesHistogramSize[CurrentSystem]/NumberOfMoleculesRange[CurrentSystem];
     int r;
-    for(int i=0; i < 1000; i++) {
+    for(int i=0; i < 10000; i++) {
         r = i/delta;
         //ParticleHistogram[r] = NumberOfMoleculesHistogram[CurrentSystem][CurrentComponent][i];
         //GaugeCellParticleHistogram[Ntotal - r] = ParticleHistogram[r];
