@@ -7220,7 +7220,8 @@ int GaugeCellSwapAddAdsorbateMove(void)
     RosenbluthIdealNew=Components[CurrentComponent].IdealGasRosenbluthWeight[CurrentSystem];
 
     // acceptence rule
-    int Ntotal = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem];
+    //int Ntotal = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem];
+    int Ntotal = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem];
     int NumberOfMolecules = Components[CurrentComponent].NumberOfMolecules[CurrentSystem];
     int Ngauge = Ntotal - NumberOfMolecules;
 
@@ -7644,7 +7645,8 @@ int GaugeCellSwapRemoveAdsorbateMove(void)
 
   RosenbluthIdealOld=Components[CurrentComponent].IdealGasRosenbluthWeight[CurrentSystem];
 
-  int Ntotal = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem];
+  //int Ntotal = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem];
+  int Ntotal = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem];
   int NumberOfMolecules = Components[CurrentComponent].NumberOfMolecules[CurrentSystem];
   int Ngauge = Ntotal - NumberOfMolecules;
   // acceptence rule

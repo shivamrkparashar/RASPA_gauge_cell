@@ -493,6 +493,7 @@ typedef struct Component
   int StartingBead;        // the bead of the molecule used for starting the growing process
 
   int *CreateNumberOfMolecules;
+  int *TotalNumberOfAdsorbateMolecules; // Number of molecules in pore cell + gauge cell
 
   int NumberOfGibbsIdentityChanges;
   int *GibbsIdentityChanges;

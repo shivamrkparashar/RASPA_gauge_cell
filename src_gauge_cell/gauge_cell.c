@@ -25,7 +25,8 @@ void PrintGaugeCellStatistics(void){
     int CurrentSystem =0;
     double Temp = (double)therm_baro_stats.ExternalTemperature[CurrentSystem];
           
-    int Ntotal = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem];
+    //int Ntotal = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem];
+    int Ntotal = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem];
     double ChemicalPotentialAvg;
     int Ngauge, Nsystem;
     Nsystem = Components[CurrentComponent].NumberOfMolecules[CurrentSystem];

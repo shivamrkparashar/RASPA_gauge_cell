@@ -859,6 +859,7 @@ int ReadInput(char *input)
     Components[i].AmountOfExcessMolecules=(REAL*)calloc(NumberOfSystems,sizeof(REAL));
 
     Components[i].CreateNumberOfMolecules=(int*)calloc(NumberOfSystems,sizeof(int));
+    Components[i].TotalNumberOfAdsorbateMolecules=(int*)calloc(NumberOfSystems,sizeof(int));
     Components[i].NumberOfMolecules=(int*)calloc(NumberOfSystems,sizeof(int));
 
     Components[i].FractionalMolecule=(int*)calloc(NumberOfSystems,sizeof(int));
@@ -2853,6 +2854,21 @@ int ReadInput(char *input)
           exit(0);
         }
       }while(sscanf(arguments,"%d %[^\n]",&Components[CurrentComponent].CreateNumberOfMolecules[index++],arguments)>1);
+    }
+     
+    if(strcasecmp("CreateNumberOfMolecules",keyword)==0)
+    {
+      index=0;
+      do
+      {
+        if(index==NumberOfSystems)
+        {
+          fprintf(stderr, "Creating molecules for more systems than the maximum allowed: %d\n",NumberOfSystems);
+          exit(0);
+        }
+      }while(sscanf(arguments,"%d %[^\n]",&Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[index++],arguments)>1);
+     // sscanf(arguments,"%lf",&Components[CurrentComponent].ProbabilityCFGibbsLambdaChangeMove)
+     // Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[index-1] = Components[CurrentComponent].CreateNumberOfMolecules[index-1] 
     }
     if(strcasecmp("BinaryEOSInteractionParameter",keyword)==0)
     {
@@ -8524,6 +8540,7 @@ void ReadRestartFile(void)
   int int_temp1,int_temp2,int_temp3,int_temp4,int_temp5;
   int *typeArrayAdsorbates,*typeArrayCations;
   int totalNumberOfAdsorbateMolecules;
+  int NumberOfMoleculesGaugePlusPore;
   int totalNumberOfCationMolecules;
   int *FractionalMolecules;
   char *arg_pointer;
@@ -8597,16 +8614,21 @@ void ReadRestartFile(void)
       strcpy(keyword,"keyword");
       sscanf(line,"%s %[^\n]",keyword,arguments);
 
-      // parse "Component: 0     Cation       96 molecules of sodium"
+      // parse "Component: 0     Cation       96 molecules of sodium NTotal (Gauge + Pore) = 150 "
       if(strcasecmp(keyword,"Component:")==0)
       {
-        sscanf(arguments,"%d %s %d molecules of %s%*[^\n]",
+        sscanf(arguments,"%d %s %d molecules of %s NTotal (Gauge + Pore) = %d %*[^\n]",
+        //sscanf(arguments,"%d %s %d molecules of %s, NTotal (Gauge + Pore) = %d",
            &CurrentComponentRead,
            ExtraFrameworkMoleculeRead,
            &NumberOfMoleculesRead,
-           ComponentNameRead);
+           ComponentNameRead,
+           &NumberOfMoleculesGaugePlusPore);
         CurrentComponent=CurrentComponentRead;
+        Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem] = NumberOfMoleculesGaugePlusPore;
       }
+      
+
 
       // read adsorbate atom information
       if(strcasecmp(keyword,"Adsorbate-atom-position:")==0)
@@ -8626,7 +8648,8 @@ void ReadRestartFile(void)
     }
     fclose(FilePtrIn);
 
-    // allocate the molecules with the correct type
+        
+        // allocate the molecules with the correct type
     for(j=0;j<totalNumberOfAdsorbateMolecules;j++)
     {
       CurrentComponent=typeArrayAdsorbates[j];

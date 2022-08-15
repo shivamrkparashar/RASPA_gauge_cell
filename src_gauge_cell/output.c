@@ -7536,11 +7536,12 @@ void PrintRestartFile(void)
 
   for(j=0;j<NumberOfComponents;j++)
   {
-    fprintf(FilePtrOut,"Component: %-5d %s    %d molecules of %s\n",
+    fprintf(FilePtrOut,"Component: %-5d %s    %d molecules of %s NTotal (Gauge + Pore) = %d \n",
       j,
       Components[j].ExtraFrameworkMolecule?"Cation   ":"Adsorbate",
       Components[j].NumberOfMolecules[CurrentSystem],
-      Components[j].Name);
+      Components[j].Name,
+      Components[j].TotalNumberOfAdsorbateMolecules[CurrentSystem]);
     fprintf(FilePtrOut,"------------------------------------------------------------------------\n");
 
     if(Components[j].ExtraFrameworkMolecule)
