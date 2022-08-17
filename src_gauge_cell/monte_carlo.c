@@ -585,7 +585,7 @@ void MonteCarloSimulation(void)
         SampleRadialDistributionFunction(SAMPLE);
         SampleProjectedLengthsDistributionFunction(SAMPLE);
         SampleProjectedAnglesDistributionFunction(SAMPLE);
-        SampleNumberOfMoleculesHistogram(SAMPLE);
+        //SampleNumberOfMoleculesHistogram(SAMPLE);
         SamplePositionHistogram(SAMPLE);
         SampleFreeEnergyProfile(SAMPLE);
         SamplePoreSizeDistribution(SAMPLE);
@@ -647,7 +647,7 @@ void MonteCarloSimulation(void)
 
           // sample Lambda-histogram
           SampleLambdaHistogram();
-
+          SampleNumberOfMoleculesHistogram(SAMPLE);
           // choose any of the MC moves randomly with the selected probability
           ran=RandomNumber();
 
