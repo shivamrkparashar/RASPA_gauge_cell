@@ -33,7 +33,7 @@
 #include <string.h>
 #include <float.h>
 #include <sys/stat.h>
-#include <sys/sysctl.h>
+#include <linux/sysctl.h>
 #include <math.h>
 #include <time.h>
 #include <unistd.h>
@@ -285,23 +285,23 @@ void PrintPreSimulationStatusCurrentSystem(int system)
 
     mib[0] = CTL_KERN;
     mib[1] = KERN_NODENAME;
-    sysctl(mib, 2, &buffer, &len, NULL, 0);
-    fprintf(FilePtr,"Hostname:    %s\n",buffer);
+    //sysctl(mib, 2, &buffer, &len, NULL, 0);
+    //fprintf(FilePtr,"Hostname:    %s\n",buffer);
 
     mib[0] = CTL_KERN;
     mib[1] = KERN_OSTYPE;
-    sysctl(mib, 2, &buffer, &len, NULL, 0);
-    fprintf(FilePtr,"OS type:     %s\n",buffer);
+    //sysctl(mib, 2, &buffer, &len, NULL, 0);
+    //fprintf(FilePtr,"OS type:     %s\n",buffer);
 
     mib[0] = CTL_KERN;
     mib[1] = KERN_OSRELEASE;
-    sysctl(mib, 2, &buffer, &len, NULL, 0);
-    fprintf(FilePtr,"OS release:  %s\n",buffer);
+    //sysctl(mib, 2, &buffer, &len, NULL, 0);
+    //fprintf(FilePtr,"OS release:  %s\n",buffer);
 
     mib[0] = CTL_KERN;
     mib[1] = KERN_VERSION;
-    sysctl(mib, 2, &buffer, &len, NULL, 0);
-    fprintf(FilePtr,"OS version:  %s\n",buffer);
+    //sysctl(mib, 2, &buffer, &len, NULL, 0);
+    //fprintf(FilePtr,"OS version:  %s\n",buffer);
 
     fprintf(FilePtr,"\n");
   #endif
