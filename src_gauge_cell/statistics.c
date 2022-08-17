@@ -4545,7 +4545,7 @@ void PrintAverageTotalSystemEnergiesMC(FILE *FilePtr)
   fprintf(FilePtr,"\n");
   fprintf(FilePtr,"Average Ideal Gauge Cell chemical potential:\n");
   fprintf(FilePtr,"=================================\n");
-  int Ngauge;
+  REAL Ngauge; // Average number of particles in the gauge cell
   for(j=0;j<NumberOfComponents;j++)
   {
     sum=sum2=0.0;
