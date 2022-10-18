@@ -3191,26 +3191,6 @@ void PrintPreSimulationStatusCurrentSystem(int system)
               (double)PotentialParms[i][j][4]*ENERGY_TO_KELVIN,
               (double)PotentialParms[i][j][5]*ENERGY_TO_KELVIN);
             break;
-          case GENERIC_SMOOTHED3:
-            // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
-            // ======================================================================================
-            // p_0/k_B [K]
-            // p_1     [A^-1]
-            // p_2/k_B [K A^4]
-            // p_3/k_B [K A^6]
-            // p_4/k_B [K A^8]
-            // p_5/k_B [K A^10]
-            fprintf(FilePtr,"%7s - %7s [GENERIC_SMOOTHED3] p_0/k_B: %8.5lf [K], p_1: %8.5lf [A^-1], p_2/k_B: %8.5lf [K A^4], p_3/k_B: %8.5lf [K A^6], "
-                            "p_4/k_B: %8.5lf [K A^8], p_5/k_B: %8.5lf [K A^10]\n",
-              PseudoAtoms[i].Name,
-              PseudoAtoms[j].Name,
-              (double)PotentialParms[i][j][0]*ENERGY_TO_KELVIN,
-              (double)PotentialParms[i][j][1],
-              (double)PotentialParms[i][j][2]*ENERGY_TO_KELVIN,
-              (double)PotentialParms[i][j][3]*ENERGY_TO_KELVIN,
-              (double)PotentialParms[i][j][4]*ENERGY_TO_KELVIN,
-              (double)PotentialParms[i][j][5]*ENERGY_TO_KELVIN);
-            break;
           case GENERIC_SMOOTHED5:
             // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
             // ======================================================================================

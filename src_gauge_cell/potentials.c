@@ -1068,6 +1068,7 @@ void ParseForceFieldSelfParameters(char *Arguments,int i,char *PotentialName)
     PotentialParms[i][i][2]=arg3*KELVIN_TO_ENERGY;
     PotentialParms[i][i][3]=arg4*KELVIN_TO_ENERGY;
     PotentialParms[i][i][4]=(REAL)0.0;
+  }
   // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
   // ======================================================================================
   // p_0/k_B [K]
@@ -5889,7 +5890,7 @@ REAL PotentialValue(int typeA,int typeB,REAL rr,REAL scaling)
   REAL ri6,ri9;
   REAL exp1,exp2,exp_term,P;
   REAL f6,f8,f10;
-  REAL rri2,rri4,rri6,rri8,rri10,rri12,rri14,rri16;
+  REAL rri2,rri4,rri6,rri7,rri8,rri9,rri10,rri12,rri14,rri16;
   REAL term1,term2;
   REAL energy,SwitchingValue;
 
@@ -7300,7 +7301,7 @@ void PotentialGradient(int typeA,int typeB,REAL rr,REAL *energy,REAL *force_fact
   REAL ri6,ri9;
   REAL exp1,exp2,exp_term,P;
   REAL f6,f8,f10,f6d,f8d,f10d;
-  REAL rri2,rri4,rri5,rri6,rri8,rri10,rri12,rri14,rri16;
+  REAL rri2,rri4,rri5,rri6,rri7,rri8,rri9,rri10,rri12,rri14,rri16;
   REAL term1,term2;
   REAL SwitchingValue,SwitchingValueDerivative;
 
@@ -9050,7 +9051,7 @@ void PotentialSecondDerivative(int typeA,int typeB,REAL rr,REAL *energy,REAL *fa
   REAL exp_term,P;
   REAL exp1,exp2;
   REAL f6,f8,f10,f6d,f8d,f10d,f6d2,f8d2,f10d2;
-  REAL rri2,rri4,rri6,rri8,rri10,rri12,rri14,rri16;
+  REAL rri2,rri4,rri5,rri6,rri7,rri8,rri9,rri10,rri12,rri14,rri16;
   REAL term1,term2;
   REAL SwitchingValue,SwitchingValueDerivative,SwitchingValueDerivative2;
 
@@ -10333,7 +10334,7 @@ void PotentialSecondDerivative(int typeA,int typeB,REAL rr,REAL *energy,REAL *fa
       exp_term=arg1*exp(-arg2*r);
       U = exp_term-arg3*rri5-arg4*rri6-arg5;
       // 1/r * DU/dr
-      fcVal = -(arg2*exp_term/r - 5.0*arg3*rri7 - 6.0*arg4*rri8);
+      fcVal1 = -(arg2*exp_term/r - 5.0*arg3*rri7 - 6.0*arg4*rri8);
       fcVal2 = arg2*exp_term*(1.0+arg2*r)/(rr*r) - 35.0*arg3*rri9 - 48.0*arg4*rri10;
       break;
     case GENERIC_SMOOTHED3:
