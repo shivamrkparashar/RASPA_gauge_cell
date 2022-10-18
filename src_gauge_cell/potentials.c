@@ -1052,6 +1052,22 @@ void ParseForceFieldSelfParameters(char *Arguments,int i,char *PotentialName)
     PotentialParms[i][i][5]=arg6*KELVIN_TO_ENERGY;
     PotentialParms[i][i][6]=(REAL)0.0;
   }
+  // p_0*exp(-p_1*r)-p_2/r^5-p_3/r^6
+  // ======================================================================================
+  // p_0/k_B [K]
+  // p_1/k_B [A^-1]
+  // p_2/k_B [K A^5]
+  // p_3/k_B [K A^6]
+  // p_4/k_B [K]  (non-zero for a shifted potential)
+  if(strcasecmp(PotentialName,"GENERIC2")==0)
+  {
+    PotentialType[i][i]=GENERIC;
+    sscanf(Arguments,"%lf %lf %lf %lf %lf %lf",&arg1,&arg2,&arg3,&arg4);
+    PotentialParms[i][i][0]=arg1*KELVIN_TO_ENERGY;
+    PotentialParms[i][i][1]=arg2;
+    PotentialParms[i][i][2]=arg3*KELVIN_TO_ENERGY;
+    PotentialParms[i][i][3]=arg4*KELVIN_TO_ENERGY;
+    PotentialParms[i][i][6]=(REAL)0.0;
   // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
   // ======================================================================================
   // p_0/k_B [K]
@@ -2473,6 +2489,29 @@ void ParseForceFieldBinaryParameters(char *Arguments,int i,int j,char *Potential
     PotentialParms[i][j][4]=arg5*KELVIN_TO_ENERGY;
     PotentialParms[j][i][5]=arg6*KELVIN_TO_ENERGY;
     PotentialParms[i][j][5]=arg6*KELVIN_TO_ENERGY;
+    PotentialParms[j][i][6]=(REAL)0.0;
+    PotentialParms[i][j][6]=(REAL)0.0;
+  }
+  // p_0*exp(-p_1*r)-p_2/r^5-p_3/r^6
+  // ======================================================================================
+  // p_0/k_B [K]
+  // p_1/k_B [A^-1]
+  // p_2/k_B [K A^5]
+  // p_3/k_B [K A^6]
+  // p_4/k_B [K]  (non-zero for a shifted potential) 
+  if(strcasecmp(PotentialName,"GENERIC2")==0)
+  {
+    PotentialType[i][j]=GENERIC2;
+    PotentialType[j][i]=GENERIC2;
+    sscanf(Arguments,"%lf %lf %lf %lf %lf %lf",&arg1,&arg2,&arg3,&arg4);
+    PotentialParms[j][i][0]=arg1*KELVIN_TO_ENERGY;
+    PotentialParms[i][j][0]=arg1*KELVIN_TO_ENERGY;
+    PotentialParms[j][i][1]=arg2;
+    PotentialParms[i][j][1]=arg2;
+    PotentialParms[j][i][2]=arg3*KELVIN_TO_ENERGY;
+    PotentialParms[i][j][2]=arg3*KELVIN_TO_ENERGY;
+    PotentialParms[j][i][3]=arg4*KELVIN_TO_ENERGY;
+    PotentialParms[i][j][3]=arg4*KELVIN_TO_ENERGY;
     PotentialParms[j][i][6]=(REAL)0.0;
     PotentialParms[i][j][6]=(REAL)0.0;
   }
@@ -5457,6 +5496,14 @@ void ComputePotentialShifts(void)
           PotentialParms[j][i][6]=arg7;
           PotentialParms[i][j][6]=arg7;
           break;
+        case GENERIC2:
+          if(ShiftPotential[i][j])
+            arg7=PotentialValue(i,j,CutOffVDWSquared,1.0);
+          else
+            arg7=(REAL)0.0;
+          PotentialParms[j][i][6]=arg5;
+          PotentialParms[i][j][6]=arg5;
+          break;
         case GENERIC_SMOOTHED3:
         case GENERIC_SMOOTHED5:
           break;
@@ -6719,6 +6766,26 @@ REAL PotentialValue(int typeA,int typeB,REAL rr,REAL scaling)
       rri14=rri12*rri2;
       exp_term=arg1*exp(-arg2*r);
       return exp_term-arg3*rri4-arg4*rri6-arg5*rri8-arg6*rri10-arg7;
+    case GENERIC2:
+      // p_0*exp(-p_1*r)-p_2/r^5-p_3/r^6
+      // ======================================================================================
+      // p_0/k_B [K]
+      // p_1/k_B [A^-1]
+      // p_2/k_B [K A^5]
+      // p_3/k_B [K A^6]
+      // p_4/k_B [K]  (non-zero for a shifted potential)
+      arg1=PotentialParms[typeA][typeB][0];
+      arg2=PotentialParms[typeA][typeB][1];
+      arg3=PotentialParms[typeA][typeB][2];
+      arg4=PotentialParms[typeA][typeB][3];
+      arg5=PotentialParms[typeA][typeB][4];
+      r=sqrt(rr);
+      rri2=1.0/rr;
+      rri4=SQR(rri2);
+      rri5=rri4*r;
+      rri6=rri4*rri2;
+      exp_term=arg1*exp(-arg2*r);
+      return exp_term-arg3*rri5-arg4*rri6-arg5;
     case GENERIC_SMOOTHED3:
       // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
       // ======================================================================================
@@ -8328,6 +8395,32 @@ void PotentialGradient(int typeA,int typeB,REAL rr,REAL *energy,REAL *force_fact
       U=exp_term-arg3*rri4-arg4*rri6-arg5*rri8-arg6*rri10-arg7;
       fcVal=-(arg2*exp_term/r-4.0*arg3*rri6-6.0*arg4*rri8-8.0*arg5*rri10-10.0*arg6*rri12);
       break;
+    case GENERIC2:
+      // p_0*exp(-p_1*r)-p_2/r^5-p_3/r^6
+      // ======================================================================================
+      // p_0/k_B [K]
+      // p_1/k_B [A^-1]
+      // p_2/k_B [K A^5]
+      // p_3/k_B [K A^6]
+      // p_4/k_B [K]  (non-zero for a shifted potential)
+      arg1=PotentialParms[typeA][typeB][0];
+      arg2=PotentialParms[typeA][typeB][1];
+      arg3=PotentialParms[typeA][typeB][2];
+      arg4=PotentialParms[typeA][typeB][3];
+      arg5=PotentialParms[typeA][typeB][4];
+      r=sqrt(rr);
+      rri2=1.0/rr;
+      rri4=SQR(rri2);
+      rri5=rri4*r;
+      rri6=rri4*rri2;
+      rri7=rri5*rri2;
+      rri8=rri6*rri2;
+      exp_term=arg1*exp(-arg2*r);
+      U = exp_term-arg3*rri5-arg4*rri6-arg5;
+      // 1/r * DU/dr
+      fcVal = -(arg2*exp_term/r - 5.0*arg3*rri7 - 6.0*arg4*rri8);
+      break;
+
     case GENERIC_SMOOTHED3:
       // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
       // ======================================================================================
@@ -10215,6 +10308,34 @@ void PotentialSecondDerivative(int typeA,int typeB,REAL rr,REAL *energy,REAL *fa
       fcVal1=-arg2*exp_term/r+4.0*arg3*rri6+6.0*arg4*rri8+8.0*arg5*rri10+10.0*arg6*rri12;
       fcVal2=arg2*exp_term*(1.0+arg2*r)/(rr*r)-24.0*arg3*rri8-48.0*arg4*rri10-80.0*arg5*rri12-120*arg6*rri14;
       break;
+    case GENERIC2:
+      // p_0*exp(-p_1*r)-p_2/r^5-p_3/r^6
+      // ======================================================================================
+      // p_0/k_B [K]
+      // p_1/k_B [A^-1]
+      // p_2/k_B [K A^5]
+      // p_3/k_B [K A^6]
+      // p_4/k_B [K]  (non-zero for a shifted potential)
+      arg1=PotentialParms[typeA][typeB][0];
+      arg2=PotentialParms[typeA][typeB][1];
+      arg3=PotentialParms[typeA][typeB][2];
+      arg4=PotentialParms[typeA][typeB][3];
+      arg5=PotentialParms[typeA][typeB][4];
+      r=sqrt(rr);
+      rri2=1.0/rr;
+      rri4=SQR(rri2);
+      rri5=rri4*r;
+      rri6=rri4*rri2;
+      rri7=rri5*rri2;
+      rri8=rri6*rri2;
+      rri9=rri7*rri2;
+      rri10=rri8*rri2;
+      exp_term=arg1*exp(-arg2*r);
+      U = exp_term-arg3*rri5-arg4*rri6-arg5;
+      // 1/r * DU/dr
+      fcVal = -(arg2*exp_term/r - 5.0*arg3*rri7 - 6.0*arg4*rri8);
+      fcVal2 = arg2*exp_term*(1.0+arg2*r)/(rr*r) - 35.0*arg3*rri9 - 48.0*arg4*rri10;
+      break;
     case GENERIC_SMOOTHED3:
       // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
       // ======================================================================================
@@ -11255,6 +11376,20 @@ REAL PotentialCorrection(int typeA,int typeB,REAL r)
       arg5=PotentialParms[typeA][typeB][4];
       arg6=PotentialParms[typeA][typeB][5];
       return arg1*exp(-arg2*r)*(2.0+arg2*r*(2.0+arg2*r))/CUBE(arg2)-arg3/r-arg4/(3.0*CUBE(r))-arg5/(5.0*pow(r,5))-arg6/(7.0*pow(r,7));
+    case GENERIC2:
+      // p_0*exp(-p_1*r)-p_2/r^5-p_3/r^6
+      // ======================================================================================
+      // p_0/k_B [K]
+      // p_1/k_B [A^-1]
+      // p_2/k_B [K A^5]
+      // p_3/k_B [K A^6]
+      // p_4/k_B [K]  (non-zero for a shifted potential)
+      arg1=PotentialParms[typeA][typeB][0];
+      arg2=PotentialParms[typeA][typeB][1];
+      arg3=PotentialParms[typeA][typeB][2];
+      arg4=PotentialParms[typeA][typeB][3];
+      arg5=PotentialParms[typeA][typeB][4];
+      return arg1*exp(-arg2*r)*(2.0+arg2*r*(2.0+arg2*r))/CUBE(arg2) - arg3/(2.0*SQR(r)) - arg4/(3.0*CUBE(r));
     case GENERIC_SMOOTHED3:
     case GENERIC_SMOOTHED5:
       return 0.0;
@@ -11587,6 +11722,20 @@ REAL PotentialCorrectionPressure(int typeA,int typeB,REAL r)
       arg5=PotentialParms[typeA][typeB][4];
       arg6=PotentialParms[typeA][typeB][5];
       return -(arg1*(6.0+arg2*r*(6.0+arg2*r*(3.0+arg2*r)))*exp(-arg2*r))/CUBE(arg2)+(4.0*arg3)/r+(2.0*arg4)/pow(r,3)+(8.0*arg5)/(5.0*pow(r,5))+(10.0*arg6)/(7.0*pow(r,7));
+    case GENERIC2:
+      // p_0*exp(-p_1*r)-p_2/r^5-p_3/r^6
+      // ======================================================================================
+      // p_0/k_B [K]
+      // p_1/k_B [A^-1]
+      // p_2/k_B [K A^5]
+      // p_3/k_B [K A^6]
+      // p_4/k_B [K]  (non-zero for a shifted potential)
+      arg1=PotentialParms[typeA][typeB][0];
+      arg2=PotentialParms[typeA][typeB][1];
+      arg3=PotentialParms[typeA][typeB][2];
+      arg4=PotentialParms[typeA][typeB][3];
+      arg5=PotentialParms[typeA][typeB][4];
+      return -(arg1*(6.0+arg2*r*(6.0+arg2*r*(3.0+arg2*r)))*exp(-arg2*r))/CUBE(arg2) + (5.0*arg3)/(2.0*SQR(r)) + (2.0*arg4)/pow(r,3);
     case GENERIC_SMOOTHED3:
     case GENERIC_SMOOTHED5:
       return 0.0;
