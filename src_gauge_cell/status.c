@@ -2680,6 +2680,34 @@ void PrintVDWEnergyStatus(int nr,char *string,int typeA,int typeB,REAL r,REAL en
           energy*ENERGY_TO_KJ_PER_MOL,
           energy*ENERGY_TO_KCAL_PER_MOL);
       break;
+
+    case GENERIC2:
+      // p_0*exp(-p_1*r)-p_2/r^5-p_3/r^6
+      // ======================================================================================
+      // p_0/k_B [K]
+      // p_1     [A^-1]
+      // p_2/k_B [K A^4]
+      // p_3/k_B [K A^6]
+      // p_6/k_B [K]  (non-zero for a shifted potential)
+      arg1=PotentialParms[typeA][typeB][0];
+      arg2=PotentialParms[typeA][typeB][1];
+      arg3=PotentialParms[typeA][typeB][2];
+      arg4=PotentialParms[typeA][typeB][3];
+      arg5=PotentialParms[typeA][typeB][4];
+      fprintf(OutputFilePtr[CurrentSystem],"%4d GENERIC %s, p_0/k_B=%8.5f [K], p_1=%8.5f [A^-1], p_2/k_B=%8.5f [K A^45], p_3/k_B=%8.5f [K A^6],"
+                                           "shift/k_B=%8.5f [K], Distance %8.5f [A], Energy: %10.5f [K] %8.5f [kJ/mol] %8.5f [kcal/mol]\n",
+          nr++,
+          string,
+          arg1*ENERGY_TO_KELVIN,
+          arg2,
+          arg3*ENERGY_TO_KELVIN,
+          arg4*ENERGY_TO_KELVIN,
+          arg5*ENERGY_TO_KELVIN,
+          r,
+          energy*ENERGY_TO_KELVIN,
+          energy*ENERGY_TO_KJ_PER_MOL,
+          energy*ENERGY_TO_KCAL_PER_MOL);
+      break;
     case GENERIC_SMOOTHED3:
       // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
       // ======================================================================================
