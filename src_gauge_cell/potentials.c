@@ -1067,7 +1067,7 @@ void ParseForceFieldSelfParameters(char *Arguments,int i,char *PotentialName)
     PotentialParms[i][i][1]=arg2;
     PotentialParms[i][i][2]=arg3*KELVIN_TO_ENERGY;
     PotentialParms[i][i][3]=arg4*KELVIN_TO_ENERGY;
-    PotentialParms[i][i][6]=(REAL)0.0;
+    PotentialParms[i][i][4]=(REAL)0.0;
   // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
   // ======================================================================================
   // p_0/k_B [K]
@@ -2512,8 +2512,8 @@ void ParseForceFieldBinaryParameters(char *Arguments,int i,int j,char *Potential
     PotentialParms[i][j][2]=arg3*KELVIN_TO_ENERGY;
     PotentialParms[j][i][3]=arg4*KELVIN_TO_ENERGY;
     PotentialParms[i][j][3]=arg4*KELVIN_TO_ENERGY;
-    PotentialParms[j][i][6]=(REAL)0.0;
-    PotentialParms[i][j][6]=(REAL)0.0;
+    PotentialParms[j][i][4]=(REAL)0.0;
+    PotentialParms[i][j][4]=(REAL)0.0;
   }
   // {p_0*exp(-p_1*r)-p_2/r^4-p_3/r^6-p_4/r^8-p_5/r^10}*S(r)
   // ======================================================================================
