@@ -4556,7 +4556,6 @@ void PrintAverageTotalSystemEnergiesMC(FILE *FilePtr)
         sum+=NumberOfIntegerMoleculesPerComponentAccumulated[CurrentSystem][j][i]/BlockWeightedCount[CurrentSystem][i];
         sum2+=SQR(NumberOfIntegerMoleculesPerComponentAccumulated[CurrentSystem][j][i]/BlockWeightedCount[CurrentSystem][i]);
         
-        //Ngauge = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem] -  
         Ngauge = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem] -  
             (NumberOfIntegerMoleculesPerComponentAccumulated[CurrentSystem][j][i]/BlockWeightedCount[CurrentSystem][i]);
         fprintf(FilePtr,"\tBlock[%2d] %-18.5lf [K]\n",i, -(double)therm_baro_stats.ExternalTemperature[CurrentSystem]*log(GaugeCellVolume/(Ngauge + 1)));
@@ -4565,9 +4564,8 @@ void PrintAverageTotalSystemEnergiesMC(FILE *FilePtr)
         fprintf(FilePtr,"\tBlock[%2d] %-18.5lf [K]\n",i,(double)0.0);
     }
     nr_molecules=sum/(REAL)NR_BLOCKS;
-    fprintf(FilePtr,"\t------------------------------------------------------------------------------\n");
-    //Ngauge = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem] - (double)(sum/(REAL)NR_BLOCKS);
     Ngauge = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem] - (double)(sum/(REAL)NR_BLOCKS);
+    fprintf(FilePtr,"\t------------------------------------------------------------------------------\n");
     fprintf(FilePtr,"\tAverage                                %18.10lf +/- %18.10lf [K]\n",
     -(double)therm_baro_stats.ExternalTemperature[CurrentSystem]*log(GaugeCellVolume/(Ngauge + 1)),
     (double)(2.0*sqrt(fabs((sum2/(REAL)NR_BLOCKS)-SQR(sum)/(REAL)SQR(NR_BLOCKS)))))/(Ngauge + 1)/GaugeCellVolume;
