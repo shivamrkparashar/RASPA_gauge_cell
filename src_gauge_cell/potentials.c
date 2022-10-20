@@ -6781,6 +6781,7 @@ REAL PotentialValue(int typeA,int typeB,REAL rr,REAL scaling)
       arg4=PotentialParms[typeA][typeB][3];
       arg5=PotentialParms[typeA][typeB][4];
       r=sqrt(rr);
+      if(r<1.5) return 1e10;
       rri2=1.0/rr;
       rri4=SQR(rri2);
       rri5=rri4*r;
@@ -8410,16 +8411,25 @@ void PotentialGradient(int typeA,int typeB,REAL rr,REAL *energy,REAL *force_fact
       arg4=PotentialParms[typeA][typeB][3];
       arg5=PotentialParms[typeA][typeB][4];
       r=sqrt(rr);
-      rri2=1.0/rr;
-      rri4=SQR(rri2);
-      rri5=rri4*r;
-      rri6=rri4*rri2;
-      rri7=rri5*rri2;
-      rri8=rri6*rri2;
-      exp_term=arg1*exp(-arg2*r);
-      U = exp_term-arg3*rri5-arg4*rri6-arg5;
-      // 1/r * DU/dr
-      fcVal = -(arg2*exp_term/r - 5.0*arg3*rri7 - 6.0*arg4*rri8);
+       
+      if(r<1.5)
+      {
+        U=1e10;
+        fcVal=0.0;
+      }
+
+      else{
+          rri2=1.0/rr;
+          rri4=SQR(rri2);
+          rri5=rri4*r;
+          rri6=rri4*rri2;
+          rri7=rri5*rri2;
+          rri8=rri6*rri2;
+          exp_term=arg1*exp(-arg2*r);
+          U = exp_term-arg3*rri5-arg4*rri6-arg5;
+          // 1/r * DU/dr
+          fcVal = -(arg2*exp_term/r - 5.0*arg3*rri7 - 6.0*arg4*rri8);
+      }
       break;
 
     case GENERIC_SMOOTHED3:
