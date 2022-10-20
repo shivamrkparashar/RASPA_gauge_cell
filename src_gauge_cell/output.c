@@ -3161,7 +3161,7 @@ void PrintPreSimulationStatusCurrentSystem(int system)
             // p_2/k_B [K A^5]
             // p_3/k_B [K A^6]
             // p_4/k_B [K]  (non-zero for a shifted potential)
-            fprintf(FilePtr,"%7s - %7s [GENERIC] p_0/k_B: %8.5lf [K], p_1: %8.5lf [A^-1], p_2/k_B: %8.5lf [K A^5], p_3/k_B: %8.5lf [K A^6], "
+            fprintf(FilePtr,"%7s - %7s [GENERIC2] p_0/k_B: %8.5lf [K], p_1: %8.5lf [A^-1], p_2/k_B: %8.5lf [K A^5], p_3/k_B: %8.5lf [K A^6], "
                             ", shift/k_B: %8.5lf [K]\n",
               PseudoAtoms[i].Name,
               PseudoAtoms[j].Name,
