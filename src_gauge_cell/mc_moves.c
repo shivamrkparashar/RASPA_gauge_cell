@@ -109,6 +109,7 @@ static REAL *UAdsorbateBackPolarizationNew;
 static REAL *UCationBackPolarizationNew;
 static REAL *UBackPolarizationNew;
 
+REAL ActualVolume;
 REAL *UHostVDWDelta;
 REAL *UHostChargeChargeRealDelta;
 REAL *UHostChargeBondDipoleRealDelta;
@@ -7019,8 +7020,12 @@ int SwapAddAdsorbateMove(void)
 
   RosenbluthIdealNew=Components[CurrentComponent].IdealGasRosenbluthWeight[CurrentSystem];
 
+  if(Components[CurrentComponent].RestrictMovesToCylinders) ActualVolume = PoreVolume[CurrentSystem];
+  else   ActualVolume = Volume[CurrentSystem];
+
+  //printf("Actual Volume %lf " , ActualVolume);
   // acceptence rule
-  if(RandomNumber()<((RosenbluthNew/RosenbluthIdealNew)*Beta[CurrentSystem]*PartialFugacity*Volume[CurrentSystem]/
+  if(RandomNumber()<((RosenbluthNew/RosenbluthIdealNew)*Beta[CurrentSystem]*PartialFugacity*ActualVolume/
                     (1.0+Components[CurrentComponent].NumberOfMolecules[CurrentSystem]-(Components[CurrentComponent].FractionalMolecule[CurrentSystem]>=0?1:0))))
   {
     SwapAddAccepted[CurrentSystem][CurrentComponent][1]+=1.0;
@@ -7219,6 +7224,9 @@ int GaugeCellSwapAddAdsorbateMove(void)
 
     RosenbluthIdealNew=Components[CurrentComponent].IdealGasRosenbluthWeight[CurrentSystem];
 
+    if(Components[CurrentComponent].RestrictMovesToCylinders) ActualVolume = PoreVolume[CurrentSystem];
+    else   ActualVolume = Volume[CurrentSystem];
+
     // acceptence rule
     //int Ntotal = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem];
     int Ntotal = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem];
@@ -7226,7 +7234,7 @@ int GaugeCellSwapAddAdsorbateMove(void)
     int Ngauge = Ntotal - NumberOfMolecules;
 
     //printf("Volume %lf " , Volume[CurrentSystem]);
-    if(RandomNumber()<((RosenbluthNew/RosenbluthIdealNew)*Volume[CurrentSystem]/GaugeCellVolume*Ngauge/(1.0+Components[CurrentComponent].NumberOfMolecules[CurrentSystem]-(Components[CurrentComponent].FractionalMolecule[CurrentSystem]>=0?1:0))))
+    if(RandomNumber()<((RosenbluthNew/RosenbluthIdealNew)*ActualVolume/GaugeCellVolume*Ngauge/(1.0+Components[CurrentComponent].NumberOfMolecules[CurrentSystem]-(Components[CurrentComponent].FractionalMolecule[CurrentSystem]>=0?1:0))))
     {
         GaugeCellSwapAddAccepted[CurrentSystem][CurrentComponent][1]+=1.0;
 
@@ -7443,9 +7451,12 @@ int SwapRemoveAdsorbateMove(void)
 
   RosenbluthIdealOld=Components[CurrentComponent].IdealGasRosenbluthWeight[CurrentSystem];
 
+  if(Components[CurrentComponent].RestrictMovesToCylinders) ActualVolume = PoreVolume[CurrentSystem];
+  else   ActualVolume = Volume[CurrentSystem];
+
   // acceptence rule
   if(RandomNumber()<((REAL)(Components[CurrentComponent].NumberOfMolecules[CurrentSystem]-(Components[CurrentComponent].FractionalMolecule[CurrentSystem]>=0?1:0))/
-                    ((RosenbluthOld/RosenbluthIdealOld)*Beta[CurrentSystem]*PartialFugacity*Volume[CurrentSystem])))
+                    ((RosenbluthOld/RosenbluthIdealOld)*Beta[CurrentSystem]*PartialFugacity*ActualVolume)))
   {
     SwapRemoveAccepted[CurrentSystem][CurrentComponent][1]+=1.0;
 
@@ -7645,13 +7656,16 @@ int GaugeCellSwapRemoveAdsorbateMove(void)
 
   RosenbluthIdealOld=Components[CurrentComponent].IdealGasRosenbluthWeight[CurrentSystem];
 
+  if(Components[CurrentComponent].RestrictMovesToCylinders) ActualVolume = PoreVolume[CurrentSystem];
+  else   ActualVolume = Volume[CurrentSystem];
+
   //int Ntotal = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem];
   int Ntotal = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem];
   int NumberOfMolecules = Components[CurrentComponent].NumberOfMolecules[CurrentSystem];
   int Ngauge = Ntotal - NumberOfMolecules;
   // acceptence rule
   if(RandomNumber()<(GaugeCellVolume*(REAL)(Components[CurrentComponent].NumberOfMolecules[CurrentSystem]-(Components[CurrentComponent].FractionalMolecule[CurrentSystem]>=0?1:0))/
-                    ((RosenbluthOld/RosenbluthIdealOld)*(Ngauge + 1)*Volume[CurrentSystem])))
+                    ((RosenbluthOld/RosenbluthIdealOld)*(Ngauge + 1)*ActualVolume)))
   {
     GaugeCellSwapRemoveAccepted[CurrentSystem][CurrentComponent][1]+=1.0;
 

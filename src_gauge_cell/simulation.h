@@ -204,6 +204,7 @@ extern int *UseReplicas;
 extern REAL_MATRIX3x3 *BoxProperties;
 extern REAL_MATRIX3x3 *InverseBoxProperties;
 extern REAL *Volume;
+extern REAL *PoreVolume;
 extern REAL *AlphaAngle;
 extern REAL *BetaAngle;
 extern REAL *GammaAngle;

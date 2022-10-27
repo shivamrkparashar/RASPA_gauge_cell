@@ -168,6 +168,7 @@ int *UseReplicas;                      // whether or not to use replicas
 REAL_MATRIX3x3 *BoxProperties;         // properties of the cell matrix (i.e. perpendicular lengths)
 REAL_MATRIX3x3 *InverseBoxProperties;  // properties of the inverse cell matrix
 REAL *Volume;                          // the volume
+REAL *PoreVolume;                      // the pore volume (for cylindrical pores, PoreVolume = pi R^2 L
 REAL *AlphaAngle;                      // the alpha-angle of the cell
 REAL *BetaAngle;                       // the beta-angle of the cell
 REAL *GammaAngle;                      // the gamma-angle of the cell
@@ -1214,6 +1215,7 @@ void AllocateSimulationMemory(void)
   BoxProperties=(REAL_MATRIX3x3*)calloc(NumberOfSystems,sizeof(REAL_MATRIX3x3));
   InverseBoxProperties=(REAL_MATRIX3x3*)calloc(NumberOfSystems,sizeof(REAL_MATRIX3x3));
   Volume=(REAL*)calloc(NumberOfSystems,sizeof(REAL));
+  PoreVolume=(REAL*)calloc(NumberOfSystems,sizeof(REAL));
   AlphaAngle=(REAL*)calloc(NumberOfSystems,sizeof(REAL));
   BetaAngle=(REAL*)calloc(NumberOfSystems,sizeof(REAL));
   GammaAngle=(REAL*)calloc(NumberOfSystems,sizeof(REAL));

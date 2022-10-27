@@ -6384,7 +6384,20 @@ void CellProperties(REAL_MATRIX3x3 *in,REAL_MATRIX3x3 *out,REAL *Volume)
       out->cx=*Volume/sqrt(bxc1*bxc1+bxc2*bxc2+bxc3*bxc3);
       out->cy=*Volume/sqrt(cxa1*cxa1+cxa2*cxa2+cxa3*cxa3);
       out->cz=*Volume/sqrt(axb1*axb1+axb2*axb2+axb3*axb3);
+      
+      int CurrentCylinder = 0;
+      if(Components[CurrentComponent].RestrictMovesToCylinders){
+          if(Components[CurrentComponent].RestrictCylinderDirection[CurrentCylinder]==X_DIR) {
+              *PoreVolume = M_PI * SQR(Components[CurrentComponent].RestrictCylinderRadius[CurrentCylinder]) * out->ax;}
+          if (Components[CurrentComponent].RestrictCylinderDirection[CurrentCylinder]==Y_DIR) {
+              *PoreVolume = M_PI * SQR(Components[CurrentComponent].RestrictCylinderRadius[CurrentCylinder]) * out->ay;}
+          if(Components[CurrentComponent].RestrictCylinderDirection[CurrentCylinder]==Z_DIR) {
+              *PoreVolume = M_PI * SQR(Components[CurrentComponent].RestrictCylinderRadius[CurrentCylinder]) * out->az;}
+      }
+
       break;
+
+
   }
 }
 
