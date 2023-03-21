@@ -1,0 +1,33 @@
+SimulationType                MonteCarlo
+NumberOfCycles                10000
+NumberOfInitializationCycles  5000
+PrintEvery                    1000
+
+RestartFile                   no
+Cutoff                        17
+Forcefield                    Local
+RemoveAtomNumberCodeFromLabel no
+UseChargesFromCIFFile         no
+ChargeMethod                  none
+
+Framework 0
+FrameworkName UiO-66F
+UnitCells 2 2 2
+HeliumVoidFraction 0.725
+ExternalTemperature 87.29
+GaugeCellSize 1000
+ComputeNumberOfMoleculesHistogram yes
+WriteNumberOfMoleculesHistogramEvery 1
+
+Movies no
+#WriteMoviesEvery 10000
+
+Component 0 MoleculeName                argon
+            MoleculeDefinition          TraPPE
+            FugacityCoefficient         1.0
+            IdealGasRosenbluthWeight    1.0
+            TranslationProbability      0.5
+            ReinsertionProbability      0.5
+            GaugeCellSwapProbability    1.0
+            CreateNumberOfMolecules     50
+

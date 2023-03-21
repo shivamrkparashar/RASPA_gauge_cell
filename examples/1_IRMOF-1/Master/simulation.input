@@ -1,0 +1,29 @@
+SimulationType		      MonteCarlo
+NumberOfCycles                200000
+NumberOfInitializationCycles  0
+PrintEvery                    10000
+
+RestartFile                   yes
+Cutoff                        12
+Forcefield                    Local
+RemoveAtomNumberCodeFromLabel no
+UseChargesFromCIFFile         no
+ChargeMethod                  none
+
+Framework 0
+FrameworkName IRMOF-1
+UnitCells 1 1 1
+ExternalTemperature 92
+GaugeCellSize 1000
+ComputeNumberOfMoleculesHistogram yes
+WriteNumberOfMoleculesHistogramEvery 1
+
+Movies no
+#WriteMoviesEvery 5000
+
+Component 0 MoleculeName                methane
+            MoleculeDefinition          TraPPE
+            TranslationProbability      0.5
+            ReinsertionProbability      0.5
+            GaugeCellSwapProbability    1.0
+            CreateNumberOfMolecules     0

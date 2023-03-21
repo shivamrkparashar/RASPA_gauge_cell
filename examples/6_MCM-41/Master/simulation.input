@@ -1,0 +1,33 @@
+SimulationType		      MonteCarlo
+NumberOfCycles                5000
+NumberOfInitializationCycles  3000
+PrintEvery                    1000
+
+RestartFile                   no
+CutoffVDW                     17
+Forcefield                    Local
+RemoveAtomNumberCodeFromLabel no
+UseChargesFromCIFFile         no
+ChargeMethod                  none
+
+Framework 0
+FrameworkName Dcc_53.948_vmd
+UnitCells 1 1 1
+ExternalTemperature 87.3
+GaugeCellSize 100
+ComputeNumberOfMoleculesHistogram yes
+
+Movies yes
+WriteMoviesEvery 10000
+
+Component 0 MoleculeName                argon
+            MoleculeDefinition          TraPPE
+	    RestrictMovesToCylinder	yes
+	    Cylinder			0
+	    CylinderDirection	 	Z
+	    CylinderCenter		0.5 0.5 0
+	    CylinderRadius		27
+            TranslationProbability      0.5
+	    ReinsertionProbability      1.0
+            GaugeCellSwapProbability    1.0
+            CreateNumberOfMolecules     100

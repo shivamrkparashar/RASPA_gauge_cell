@@ -1,0 +1,30 @@
+SimulationType		      MonteCarlo
+NumberOfCycles                40000
+NumberOfInitializationCycles  0
+PrintEvery                    10000
+
+RestartFile                   yes
+Cutoff                        15.00
+Forcefield                    Local
+UseChargesFromCIFFile         yes
+ChargeMethod                  Ewald
+EwaldPrecision	              1e-6
+
+Framework 0
+FrameworkName indexed_1_charged_oxstate
+UnitCells 1 1 1
+ExternalTemperature 194.7
+GaugeCellSize 100 
+ComputeNumberOfMoleculesHistogram yes
+WriteNumberOfMoleculesHistogramEvery 1
+
+Movies no
+#WriteMoviesEvery 500
+
+Component 0 MoleculeName                CO2
+            MoleculeDefinition          TraPPE
+            TranslationProbability      0.5
+            RotationProbability         0.5
+            ReinsertionProbability      0.5
+            GaugeCellSwapProbability    1.0
+            CreateNumberOfMolecules     0

@@ -1,0 +1,41 @@
+#!/bin/bash
+#SBATCH --job-name=GCMC
+#SBATCH --output=ar.out
+#SBATCH --error=ar.err
+#SBATCH -p SOE_neimark
+#SBATCH --account=neimark
+#SBATCH -t 6-24:00
+#SBATCH --mem=80000            # memory per node in MB
+
+export RASPA_DIR=${HOME}/RASPA/simulations/
+export DYLD_LIBRARY_PATH=${RASPA_DIR}/lib
+export LD_LIBRARY_PATH=${RASPA_DIR}/lib
+
+# Setup temporary directory for computations
+TMP=/tmp/$USER/${SLURM_JOB_ID}
+if [ ! -d "${TMP}" ]; then
+mkdir -p ${TMP}
+fi
+
+function clean_up {
+# Perform program exit housekeeping
+rm -rf ${TMP}		#Recursively Force
+exit
+}
+
+# Save the current directory in variable CURR
+CURR=${PWD}
+cd ${CURR}
+
+# Copy the executable and input file into TMP
+cp -r * ${TMP}
+
+# Run the code within TMP
+cd ${TMP}
+$RASPA_DIR/bin/simulate $1
+
+# Copy the results back into the home directory
+cp -r * ${CURR}
+
+# Cleanup TMP
+clean_up
