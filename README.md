@@ -8,7 +8,12 @@ metal-organic frameworks, carbon nanotubes and external fields.
 Installation
 ============
 
-
+# using Cmake
+```
+cd src_gauge_cell
+cmake .
+make
+```
 
 Usage
 =====

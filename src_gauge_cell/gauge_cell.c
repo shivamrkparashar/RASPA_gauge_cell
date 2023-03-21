@@ -16,59 +16,47 @@ int GaugeCellParticleHistogram [10000];
 
 FILE *FileHistogram;
 
+/*********************************************************************************************************
+ * Name       | PrintGaugeCellStatistics                                                                 *
+ * ----------------------------------------------------------------------------------------------------- *
+ * Function   | Prints gauge cell histogram to a file- HistogramGaugeCell.dat in the simulation directory*
+ * Parameters | -                                                                                        *
+ * Note       | -                                                                                        *
+ * Refs.      | A.V. Neimark and A. Vishnyakov, - A Simulation Method for the Calculation of Chemical    *
+ *            | Potentials in Small, Inhomogeneous, and Dense Systems , Journal of  Chemical Physics,    *
+ *            | 2005,  V. 122, 234108.                                                                   *
+ *********************************************************************************************************/
+
 void PrintGaugeCellStatistics(void){
 
-    if(GaugeCellSize == 0.0) return 
+    if(GaugeCellSize == 0.0) return;
 
-    GaugeCellVolume = CUBE(GaugeCellSize);
     int CurrentComponent = 0;
     int CurrentSystem =0;
     double Temp = (double)therm_baro_stats.ExternalTemperature[CurrentSystem];
-          
-    //int Ntotal = Components[CurrentComponent].CreateNumberOfMolecules[CurrentSystem];
     int Ntotal = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem];
     double ChemicalPotentialAvg;
     int Ngauge, Nsystem;
-    Nsystem = Components[CurrentComponent].NumberOfMolecules[CurrentSystem];
-    float ChemicalPotentialCanonical;
-
+    double ChemicalPotentialCanonical;
     REAL delta=NumberOfMoleculesHistogramSize[CurrentSystem]/NumberOfMoleculesRange[CurrentSystem];
     int r;
+
+    //Nsystem = Components[CurrentComponent].NumberOfMolecules[CurrentSystem];
+    GaugeCellVolume = CUBE(GaugeCellSize);
+    // Calculate gauge cell histogram
     for(int i=0; i < 10000; i++) {
         r = i/delta;
-        //ParticleHistogram[r] = NumberOfMoleculesHistogram[CurrentSystem][CurrentComponent][i];
-        //GaugeCellParticleHistogram[Ntotal - r] = ParticleHistogram[r];
         if (i %2 == 0 && (Ntotal - r) >= 0)
         {
+            // number of particles in gauge cell = ntotal - number of particles in pore cell
             GaugeCellParticleHistogram[Ntotal - r] = NumberOfMoleculesHistogram[CurrentSystem][CurrentComponent][i];
-            //printf("%d  %20lf  %20d \n", i,  NumberOfMoleculesHistogram[CurrentSystem][CurrentComponent][i], r) ;
-            //printf("%20lf  %20d \n", (double)r, GaugeCellParticleHistogram[Ntotal - r]);
         }
-        //if(NumberOfMoleculesHistogram[CurrentSystem][CurrentComponent][i]>0.0)
-        //    printf("%20lf  %20lf \n", (double)r, NumberOfMoleculesHistogram[CurrentSystem][CurrentComponent][i]);
-        //
-        //if (i <= Ntotal*delta)
-        //    printf("%d  %20lf  %20d \n", i,  NumberOfMoleculesHistogram[CurrentSystem][CurrentComponent][i], r) ;
-        
     }
-    // Print results on screen
-    
-    /*
-    for(int r=0; r < Ntotal; r++){
-            
-            printf("%d  %20d \n", r, GaugeCellParticleHistogram[r]) ;
-            
-            }
-            */
 
     char buffer[256];
-    printf("%20s %20s %20s %20s %20s \n", "MaxNparticles", "Npore", "Ngauge", "Ngauge_frequencey", "Chempot");
     sprintf(buffer, "HistogramGaugeCell.dat");
     FileHistogram = fopen(buffer, "w");
-
     fprintf(FileHistogram, "%20s %20s %20s %20s %20s \n", "MaxNparticles", "Npore", "Ngauge", "Ngauge_frequencey", "Chempot");
-    //printf("%20d %20d %20d \n", Ntotal, Nsystem, Ntotal-Nsystem);
-
 
     for (int Nsim = 0; Nsim < Ntotal; Nsim++) {
         Ngauge = Ntotal - Nsim;
@@ -78,9 +66,7 @@ void PrintGaugeCellStatistics(void){
             ChemicalPotentialCanonical = -Temp * log(GaugeCellVolume / Ngauge) +
                                              Temp * log((double) GaugeCellParticleHistogram[Ngauge] / GaugeCellParticleHistogram[Ngauge -1]);
             fprintf(FileHistogram, "%20d %20d %20d %20d %20.3lf\n", Ntotal, Nsim, Ngauge, GaugeCellParticleHistogram[Ngauge], ChemicalPotentialCanonical);
-            printf("%20d %20d %20d %20d %20.3lf\n", Ntotal, Nsim, Ngauge, GaugeCellParticleHistogram[Ngauge], ChemicalPotentialCanonical);
         }
     }
     fclose(FileHistogram);
 }
-//ChemicalPotentialAvg = -Temp * log(GaugeCellVolume / Lambda3_Sigma3 / (Ntotal-AverageNumberOfParticle + 1) );
