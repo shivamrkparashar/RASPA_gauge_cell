@@ -4558,7 +4558,7 @@ void PrintAverageTotalSystemEnergiesMC(FILE *FilePtr)
         
         Ngauge = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem] -  
             (NumberOfIntegerMoleculesPerComponentAccumulated[CurrentSystem][j][i]/BlockWeightedCount[CurrentSystem][i]);
-        fprintf(FilePtr,"\tBlock[%2d] %-18.5lf [K]\n",i, -(double)therm_baro_stats.ExternalTemperature[CurrentSystem]*log(GaugeCellVolume/(Ngauge + 1)));
+        fprintf(FilePtr,"\tBlock[%2d] %-18.5lf [K]\n",i, -(double)therm_baro_stats.ExternalTemperature[CurrentSystem]*log(GaugeCellVolume/(Ngauge)));
       }
       else
         fprintf(FilePtr,"\tBlock[%2d] %-18.5lf [K]\n",i,(double)0.0);
@@ -4567,8 +4567,8 @@ void PrintAverageTotalSystemEnergiesMC(FILE *FilePtr)
     Ngauge = Components[CurrentComponent].TotalNumberOfAdsorbateMolecules[CurrentSystem] - (double)(sum/(REAL)NR_BLOCKS);
     fprintf(FilePtr,"\t------------------------------------------------------------------------------\n");
     fprintf(FilePtr,"\tAverage                                %18.10lf +/- %18.10lf [K]\n",
-    -(double)therm_baro_stats.ExternalTemperature[CurrentSystem]*log(GaugeCellVolume/(Ngauge + 1)),
-    (double)(2.0*sqrt(fabs((sum2/(REAL)NR_BLOCKS)-SQR(sum)/(REAL)SQR(NR_BLOCKS)))))/(Ngauge + 1)/GaugeCellVolume;
+    -(double)therm_baro_stats.ExternalTemperature[CurrentSystem]*log(GaugeCellVolume/(Ngauge)),
+    (double)(2.0*sqrt(fabs((sum2/(REAL)NR_BLOCKS)-SQR(sum)/(REAL)SQR(NR_BLOCKS)))))/(Ngauge)/GaugeCellVolume;
   }
   // Average fixed volume chemical potential
   //
