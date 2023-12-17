@@ -64,6 +64,7 @@
 #include "warnings.h"
 #include "rigid.h"
 #include "spacegroup.h"
+#include "gauge_cell.h"
 
 extern bool STREAM;
 extern char **FILE_CONTENTS;
@@ -6037,8 +6038,14 @@ void PrintPreSimulationStatusCurrentSystem(int system)
       fprintf(FilePtr,"area of the cell: %18.12lf (A^2)\n",(double)Volume[system]);
       break;
     case 3:
+      fprintf(FilePtr,"Gauge cell size: %lf %lf %lf\n",
+              (double)GaugeCellSize,(double)GaugeCellSize,(double)GaugeCellSize);
+
+      fprintf(FilePtr,"----------------------------------------------------------\n");
+
       fprintf(FilePtr,"Unit cell size: %lf %lf %lf\n",
               (double)UnitCellSize[system].x,(double)UnitCellSize[system].y,(double)UnitCellSize[system].z);
+
       fprintf(FilePtr,"Cell angles (radians)  alpha: %lf beta: %lf gamma: %lf\n",
               (double)AlphaAngle[system],(double)BetaAngle[system],(double)GammaAngle[system]);
       fprintf(FilePtr,"Cell angles (degrees)  alpha: %lf beta: %lf gamma: %lf\n",
@@ -6396,11 +6403,12 @@ void PrintPreSimulationStatusCurrentSystem(int system)
   fprintf(FilePtr,"Number of framework atoms        : %d\n",Framework[system].TotalNumberOfAtoms);
   fprintf(FilePtr,"Number of cations molecules      : %d\n",NumberOfCationMolecules[system]);
   fprintf(FilePtr,"Number of adsorbate molecules    : %d\n",NumberOfAdsorbateMolecules[system]);
-  fprintf(FilePtr,"Number of molecules (gauge +pore): %d\n",NumberOfMoleculesGaugePlusPore[system]);
 
 
-  for(i=0;i<NumberOfComponents;i++)
-    fprintf(FilePtr,"Component %4d : %4d molecules\n",i,Components[i].NumberOfMolecules[system]);
+  for(i=0;i<NumberOfComponents;i++) {
+      fprintf(FilePtr, "Component %4d : %4d molecules\n", i, Components[i].NumberOfMolecules[system]);
+      fprintf(FilePtr, "Number of molecules (gauge+pore): %d\n", Components[i].TotalNumberOfAdsorbateMolecules[system]);
+  }
 
   for(i=0;i<NumberOfPseudoAtoms;i++)
     fprintf(FilePtr,"Pseudo Atoms %4d [%8s]: %4d atoms\n",
