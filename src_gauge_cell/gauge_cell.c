@@ -56,7 +56,7 @@ void PrintGaugeCellStatistics(void){
     char buffer[256];
     sprintf(buffer, "HistogramGaugeCell.dat");
     FileHistogram = fopen(buffer, "w");
-    fprintf(FileHistogram, "%20s %20s %20s %20s %20s \n", "MaxNparticles", "Npore", "Ngauge", "Ngauge_frequencey", "Chempot");
+    fprintf(FileHistogram, "%20s %20s %20s %20s %20s \n", "Ntotal", "Npore", "Ngauge", "Ngauge_frequency", "Chempot[K]");
 
     for (int Nsim = 0; Nsim < Ntotal; Nsim++) {
         Ngauge = Ntotal - Nsim;
