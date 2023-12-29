@@ -1,0 +1,32 @@
+SimulationType		      MonteCarlo
+NumberOfCycles                50000
+NumberOfInitializationCycles  50000
+PrintEvery                    5000
+
+ContinueAfterCrash            no
+WriteBinaryRestartFileEvery   5000
+
+RestartFile                   no
+Cutoff                        16.00
+Forcefield                    Local
+UseChargesFromCIFFile         no
+ChargeMethod                  none
+EwaldPrecision	              1e-6
+
+Framework 0
+FrameworkName IRMOF-74-V_with_REPEAT_charges
+UnitCells 5 1 1
+ExternalTemperature 87.3
+GaugeCellSize 142.357
+ComputeNumberOfMoleculesHistogram yes
+WriteNumberOfMoleculesHistogramEvery 1
+
+Movies yes
+WriteMoviesEvery 25000
+
+Component 0 MoleculeName                argon
+            MoleculeDefinition          TraPPE
+            TranslationProbability      0.5
+            ReinsertionProbability      0.5
+            GaugeCellSwapProbability    1.0
+CreateNumberOfMolecules 640

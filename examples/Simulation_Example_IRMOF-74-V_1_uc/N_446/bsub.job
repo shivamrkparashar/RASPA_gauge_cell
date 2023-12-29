@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --job-name=V-1uc_446
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -t 2-24:00
+#SBATCH --mem 6GB
+#SBATCH -p main
+#SBATCH --export=ALL
+#SBATCH --output=ar.out
+#SBATCH --error=ar.err
+
+#export RASPA_DIR=${HOME}/RASPA/simulations/
+
+#$RASPA_DIR/bin/simulate $1
+
+#/home/sp1709/src_gauge_cell/src_gauge_cell
+/home/sp1709/src_gauge_cell/RASPA_gauge_cell/src_gauge_cell/src_gauge_cell

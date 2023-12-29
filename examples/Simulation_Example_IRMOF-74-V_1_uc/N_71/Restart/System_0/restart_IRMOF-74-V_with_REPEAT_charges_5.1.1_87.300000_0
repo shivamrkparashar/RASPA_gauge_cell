@@ -1,0 +1,67 @@
+Cell info:
+========================================================================
+number-of-unit-cells: 5 1 1
+unit-cell-vector-a:     6.818500000000     0.000000000000     0.000000000000
+unit-cell-vector-b:    -2.272801270892    38.344901658800     0.000000000000
+unit-cell-vector-c:    -2.272801270892   -19.172349551344    33.207717414844
+
+cell-vector-a:    34.092500000000     0.000000000000     0.000000000000
+cell-vector-b:    -2.272801270892    38.344901658800     0.000000000000
+cell-vector-c:    -2.272801270892   -19.172349551344    33.207717414844
+
+cell-lengths:     6.818500000000    38.412200000000    38.412200000000
+cell-angles:   119.653000000000    93.392100000000    93.392100000000
+
+
+Maximum changes for MC-moves:
+========================================================================
+Maximum-volume-change: 0.000500
+Maximum-Gibbs-volume-change: 0.000500
+Maximum-box-shape-change: 0.100000 0.100000 0.100000, 0.100000 0.100000 0.100000, 0.100000 0.100000 0.100000
+
+
+Acceptance targets for MC-moves:
+========================================================================
+Target-volume-change: 0.500000
+Target-box-shape-change: 0.500000
+Target-Gibbs-volume-change: 0.500000
+
+
+Components: 1 (Adsorbates 3, Cations 0)
+========================================================================
+Component 0 (argon)
+	Fractional-molecule-id component 0: -1
+	Lambda-factors component 0:  0.000000
+	Number-of-biasing-factors component 0: 21
+	Biasing-factors component 0:  0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+	Maximum-CF-Lambda-change component 0: 0.500000
+	Maximum-CBCF-Lambda-change component 0: 0.500000
+
+	Maximum-translation-change component 0: 1.000000,0.640154,0.616505
+	Maximum-translation-in-plane-change component 0: 0.000000,0.000000,0.000000
+	Maximum-rotation-change component 0: 0.017453 0.017453 0.017453
+
+Reactions: 0
+
+Component: 0     Adsorbate    3 molecules of argon NTotal (Gauge + Pore) = 71 
+------------------------------------------------------------------------
+Adsorbate-atom-position: 0 0    15.193489821816    16.038003608772     8.071104385862
+Adsorbate-atom-position: 1 0    32.675287428312    -3.246650249244    24.304266944830
+Adsorbate-atom-position: 2 0     3.327569165098    18.784485416483    14.826508644122
+Adsorbate-atom-velocity: 0 0     1.093086402631    -3.183708250450    -1.456460101883
+Adsorbate-atom-velocity: 1 0    -1.804287812805     1.748784428578     0.954385368044
+Adsorbate-atom-velocity: 2 0     0.143441576067    -0.282998694704    -0.258401965138
+Adsorbate-atom-force:    0 0    91.980971782087   249.052344836521   225.779036528463
+Adsorbate-atom-force:    1 0  -246.584483484676   -79.313095056003   -66.989390209833
+Adsorbate-atom-force:    2 0    85.088608951003    77.025932184935   221.910631592192
+Adsorbate-atom-charge:   0 0     0.000000000000
+Adsorbate-atom-charge:   1 0     0.000000000000
+Adsorbate-atom-charge:   2 0     0.000000000000
+Adsorbate-atom-scaling:  0 0     1.000000000000
+Adsorbate-atom-scaling:  1 0     1.000000000000
+Adsorbate-atom-scaling:  2 0     1.000000000000
+Adsorbate-atom-fixed:    0 0       0 0 0
+Adsorbate-atom-fixed:    1 0       0 0 0
+Adsorbate-atom-fixed:    2 0       0 0 0
+
+
